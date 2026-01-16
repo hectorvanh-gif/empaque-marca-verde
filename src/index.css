@@ -1,96 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* La Bolsa de Tu Marca - Design System
+   Paleta: Verde Bosque, Verde Salvia, Azul Petróleo, Azul Niebla, Blanco Algodón, Gris Grafito
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Blanco Algodón - Fondo principal */
+    --background: 80 14% 96%;
+    /* Verde Bosque - Texto principal */
+    --foreground: 147 31% 18%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Cards con sutil tinte verde */
+    --card: 80 14% 96%;
+    --card-foreground: 147 31% 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 80 14% 96%;
+    --popover-foreground: 147 31% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Verde Bosque Profundo - Primary */
+    --primary: 147 31% 18%;
+    --primary-foreground: 80 14% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Verde Salvia Suave - Secondary */
+    --secondary: 142 23% 71%;
+    --secondary-foreground: 147 31% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted con Verde Salvia */
+    --muted: 142 23% 85%;
+    --muted-foreground: 160 12% 27%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Azul Petróleo - Accent */
+    --accent: 193 49% 24%;
+    --accent-foreground: 80 14% 96%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Azul Niebla - Info/Highlight */
+    --highlight: 195 24% 64%;
+    --highlight-foreground: 147 31% 18%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 80 14% 96%;
+
+    /* Gris Grafito */
+    --border: 160 12% 27%;
+    --input: 142 23% 85%;
+    --ring: 147 31% 18%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom variables */
+    --forest: 147 31% 18%;
+    --sage: 142 23% 71%;
+    --petrol: 193 49% 24%;
+    --mist: 195 24% 64%;
+    --cotton: 80 14% 96%;
+    --graphite: 160 12% 27%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(147 31% 18%) 0%, hsl(193 49% 24%) 100%);
+    --gradient-sage: linear-gradient(180deg, hsl(142 23% 71% / 0.3) 0%, hsl(80 14% 96%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(147 31% 18%) 0%, hsl(147 31% 25%) 100%);
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(147 31% 18% / 0.12);
+    --shadow-elevated: 0 10px 40px -10px hsl(147 31% 18% / 0.2);
+    --shadow-card: 0 2px 12px -2px hsl(147 31% 18% / 0.08);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 147 31% 10%;
+    --foreground: 80 14% 96%;
+    --card: 147 31% 14%;
+    --card-foreground: 80 14% 96%;
+    --popover: 147 31% 14%;
+    --popover-foreground: 80 14% 96%;
+    --primary: 142 23% 71%;
+    --primary-foreground: 147 31% 18%;
+    --secondary: 193 49% 24%;
+    --secondary-foreground: 80 14% 96%;
+    --muted: 160 12% 20%;
+    --muted-foreground: 142 23% 71%;
+    --accent: 195 24% 64%;
+    --accent-foreground: 147 31% 18%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 80 14% 96%;
+    --border: 160 12% 30%;
+    --input: 160 12% 20%;
+    --ring: 142 23% 71%;
   }
 }
 
@@ -100,6 +100,71 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-sage {
+    background: var(--gradient-sage);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
