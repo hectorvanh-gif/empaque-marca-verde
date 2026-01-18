@@ -102,7 +102,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-primary-foreground/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © {currentYear} La Bolsa de Tu Marca. Todos los derechos reservados.
+              © 2020 La Bolsa de Tu Marca. Todos los derechos reservados.
             </p>
             <div className="flex items-center gap-2 text-primary-foreground/60 text-sm">
               <Leaf className="w-4 h-4" />
