@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
-  const whatsappLink = "https://wa.me/5255547572447?text=Hola,%20me%20interesa%20cotizar%20bolsas%20de%20papel%20personalizadas";
+  const whatsappLink = "https://wa.me/5215554757247?text=Hola,%20me%20interesa%20cotizar%20bolsas%20de%20papel%20personalizadas";
 
   return (
     <a
