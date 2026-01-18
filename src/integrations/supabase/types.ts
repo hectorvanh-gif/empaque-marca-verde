@@ -14,7 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      cotizaciones: {
+        Row: {
+          correo: string
+          created_at: string
+          empresa: string | null
+          estado: string
+          id: string
+          mensaje: string
+          nombre: string
+          telefono: string | null
+          updated_at: string
+        }
+        Insert: {
+          correo: string
+          created_at?: string
+          empresa?: string | null
+          estado?: string
+          id?: string
+          mensaje: string
+          nombre: string
+          telefono?: string | null
+          updated_at?: string
+        }
+        Update: {
+          correo?: string
+          created_at?: string
+          empresa?: string | null
+          estado?: string
+          id?: string
+          mensaje?: string
+          nombre?: string
+          telefono?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

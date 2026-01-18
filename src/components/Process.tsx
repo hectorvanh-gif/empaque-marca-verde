@@ -81,7 +81,7 @@ const Process = () => {
             Contáctanos para conocer disponibilidad y tiempos de entrega.
           </p>
           <a
-            href="https://wa.me/5255547572447?text=Hola,%20tengo%20un%20proyecto%20urgente%20de%20bolsas%20de%20papel"
+            href="https://wa.me/5215554757247?text=Hola,%20tengo%20un%20proyecto%20urgente%20de%20bolsas%20de%20papel"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center text-accent font-semibold hover:text-primary transition-colors"

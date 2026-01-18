@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -43,8 +44,25 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Save to database
+    const { error } = await supabase.from('cotizaciones').insert({
+      nombre: formData.name.trim(),
+      empresa: formData.company.trim() || null,
+      correo: formData.email.trim(),
+      telefono: formData.phone.trim() || null,
+      mensaje: formData.message.trim() || 'Sin mensaje adicional',
+    });
+
+    if (error) {
+      console.error('Error saving quote:', error);
+      toast({
+        title: "Error",
+        description: "Hubo un problema al enviar tu solicitud. Por favor intenta de nuevo.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
 
     // Create WhatsApp message with form data
     const whatsappMessage = encodeURIComponent(
@@ -58,12 +76,12 @@ const Contact = () => {
 
     toast({
       title: "¡Gracias por tu interés!",
-      description: "Te redirigiremos a WhatsApp para continuar la conversación.",
+      description: "Tu solicitud fue enviada. Te redirigiremos a WhatsApp.",
     });
 
     // Redirect to WhatsApp
     setTimeout(() => {
-      window.open(`https://wa.me/5255547572447?text=${whatsappMessage}`, '_blank');
+      window.open(`https://wa.me/5215554757247?text=${whatsappMessage}`, '_blank');
     }, 1500);
 
     setIsSubmitting(false);
@@ -80,8 +98,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "WhatsApp",
-      value: "+52 55 54 75 72 47",
-      href: "https://wa.me/5255547572447",
+      value: "+52 1 55 5475 7247",
+      href: "https://wa.me/5215554757247",
     },
     {
       icon: MapPin,
