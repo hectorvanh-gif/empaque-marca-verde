@@ -20,8 +20,8 @@ const Index = () => {
       <Products />
       <Benefits />
       <Shipping />
-      <Process />
       <Urgency />
+      <Process />
       <Testimonials />
       <Contact />
       <Footer />
