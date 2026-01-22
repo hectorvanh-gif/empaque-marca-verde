@@ -1,20 +1,9 @@
-import heroBanner from "@/assets/hero-banner.jpg";
-
 const HeroMinimal = () => {
   return (
-    <section id="inicio" className="relative min-h-[85vh] flex items-center justify-center pt-20 overflow-hidden">
-      {/* Banner de fondo */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBanner})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/80" />
-      </div>
-      
-      {/* Contenido */}
-      <div className="container relative z-10 mx-auto px-4">
+    <section id="inicio" className="min-h-[70vh] flex items-center justify-center bg-background pt-20">
+      <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-8 drop-shadow-sm">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-8">
             Tu publicidad en cada venta
           </h1>
           
