@@ -18,7 +18,7 @@ const slides = [
   },
   {
     image: product2,
-    text: "Publicidad que camina",
+    text: "Delivery con tu marca",
   },
   {
     image: product3,
