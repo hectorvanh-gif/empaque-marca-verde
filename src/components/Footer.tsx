@@ -59,12 +59,12 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="https://wa.me/5215554757247"
+                  href="https://wa.me/5215545925827"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  +52 1 55 5475 7247
+                  +52 1 55 4592 5827
                 </a>
               </li>
               <li>Ciudad de México, México</li>

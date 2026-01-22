@@ -81,7 +81,7 @@ const Contact = () => {
 
     // Redirect to WhatsApp
     setTimeout(() => {
-      window.open(`https://wa.me/5215554757247?text=${whatsappMessage}`, '_blank');
+      window.open(`https://wa.me/5215545925827?text=${whatsappMessage}`, '_blank');
     }, 1500);
 
     setIsSubmitting(false);
@@ -98,8 +98,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "WhatsApp",
-      value: "+52 1 55 5475 7247",
-      href: "https://wa.me/5215554757247",
+      value: "+52 1 55 4592 5827",
+      href: "https://wa.me/5215545925827",
     },
     {
       icon: MapPin,
