@@ -13,7 +13,7 @@ const Footer = () => {
             <img
               src={logo}
               alt="La Bolsa de Tu Marca"
-              className="h-16 w-auto mb-4 brightness-0 invert"
+              className="h-16 w-auto mb-4"
             />
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Fabricamos bolsas de papel personalizadas y ecológicas en México. 
