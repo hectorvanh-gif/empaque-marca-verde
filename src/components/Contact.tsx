@@ -54,7 +54,9 @@ const Contact = () => {
     });
 
     if (error) {
-      console.error('Error saving quote:', error);
+      if (import.meta.env.DEV) {
+        console.error('Error saving quote:', error);
+      }
       toast({
         title: "Error",
         description: "Hubo un problema al enviar tu solicitud. Por favor intenta de nuevo.",
