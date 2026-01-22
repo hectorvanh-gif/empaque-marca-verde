@@ -24,7 +24,7 @@ const WhyBags = () => {
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <h2 className="font-display text-3xl md:text-4xl text-foreground text-center mb-12 md:mb-16">
-          ¿Por qué BAGS?
+          ¿Por qué Bolsas?
         </h2>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
