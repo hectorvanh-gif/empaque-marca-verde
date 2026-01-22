@@ -8,7 +8,7 @@ const HeroMinimal = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl">
-            Fabricamos bolsas de papel kraft personalizadas para marcas que buscan destacar
+            Fabricamos bolsas de papel personalizadas para marcas que buscan destacar
           </p>
           
           <a
