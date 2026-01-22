@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import HeroMinimal from "@/components/HeroMinimal";
 import ProductCarousel from "@/components/ProductCarousel";
 import IndustrialCarousel from "@/components/IndustrialCarousel";
+import Urgency from "@/components/Urgency";
 import WhyBags from "@/components/WhyBags";
 import DetailCarousel from "@/components/DetailCarousel";
 import FinalCTA from "@/components/FinalCTA";
@@ -17,6 +18,7 @@ const Index = () => {
       <HeroMinimal />
       <ProductCarousel />
       <IndustrialCarousel />
+      <Urgency />
       <WhyBags />
       <DetailCarousel />
       <FinalCTA />
