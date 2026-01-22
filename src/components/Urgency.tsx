@@ -1,7 +1,7 @@
 import { Clock, MessageCircle } from "lucide-react";
 
 const Urgency = () => {
-  const whatsappNumber = "5215554757247";
+  const whatsappNumber = "5215545925827";
   const whatsappMessage = encodeURIComponent("¡Hola! Me urgen mis bolsas, ¿pueden ayudarme?");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
