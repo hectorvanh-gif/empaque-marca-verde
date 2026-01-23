@@ -10,6 +10,7 @@ import product1 from "@/assets/carousel/product-1.jpg";
 import product2 from "@/assets/carousel/product-2.jpg";
 import product3 from "@/assets/carousel/product-3.jpg";
 import product4 from "@/assets/carousel/product-4.jpg";
+import product5 from "@/assets/carousel/product-5.jpg";
 
 const slides = [
   {
@@ -27,6 +28,10 @@ const slides = [
   {
     image: product4,
     text: "Diseño que impacta",
+  },
+  {
+    image: product5,
+    text: "Bolsas de tela personalizadas",
   },
 ];
 
