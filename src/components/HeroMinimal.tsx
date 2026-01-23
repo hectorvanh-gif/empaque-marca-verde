@@ -4,10 +4,8 @@ const HeroMinimal = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <h1 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-foreground leading-snug mb-10 max-w-5xl tracking-tight">
-            <span className="block">Diseñamos y fabricamos</span>
-            <span className="block text-primary">bolsas de papel y bolsas de tela</span>
-            <span className="block">personalizadas para que tu marca</span>
-            <span className="block font-semibold">venda, destaque y se recuerde.</span>
+            <span className="block">Diseñamos y fabricamos <span className="text-primary">bolsas de papel y de tela</span> personalizadas</span>
+            <span className="block">para que tu marca <span className="font-semibold">venda más, destaque y se recuerde.</span></span>
           </h1>
           
           <a
