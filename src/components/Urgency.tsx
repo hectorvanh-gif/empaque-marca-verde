@@ -6,12 +6,12 @@ const Urgency = () => {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-br from-amber-500 via-orange-500 to-red-500">
+    <section className="relative py-20 overflow-hidden bg-gradient-to-br from-primary via-accent to-primary">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-48 h-48 bg-yellow-200 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-white rounded-full blur-2xl animate-pulse delay-500" />
+        <div className="absolute top-10 left-10 w-32 h-32 bg-secondary rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-48 h-48 bg-mist rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-secondary rounded-full blur-2xl animate-pulse delay-500" />
       </div>
       
       {/* Decorative pattern */}
@@ -25,7 +25,7 @@ const Urgency = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Animated icon with glow */}
           <div className="relative inline-block mb-8">
-            <div className="absolute inset-0 bg-white/30 rounded-full blur-xl animate-pulse scale-150" />
+            <div className="absolute inset-0 bg-secondary/30 rounded-full blur-xl animate-pulse scale-150" />
             <div className="relative inline-flex items-center justify-center w-24 h-24 bg-white/20 rounded-full border-2 border-white/40 backdrop-blur-sm">
               <Zap className="w-12 h-12 text-white animate-pulse" />
             </div>
@@ -70,9 +70,9 @@ const Urgency = () => {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-3 px-10 py-5 bg-white text-orange-600 font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-2xl text-lg overflow-hidden"
+            className="group relative inline-flex items-center gap-3 px-10 py-5 bg-white text-primary font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-2xl text-lg overflow-hidden"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-100 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-secondary/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <MessageCircle className="w-6 h-6 relative z-10" />
             <span className="relative z-10">Escríbenos Ahora</span>
           </a>
