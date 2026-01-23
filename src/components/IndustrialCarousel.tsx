@@ -34,7 +34,7 @@ const IndustrialCarousel = () => {
   return (
     <section className="py-8 md:py-16 bg-secondary/20">
       <div className="container mx-auto px-4 mb-8">
-        <p className="text-center text-muted-foreground text-sm uppercase tracking-widest">
+        <p className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-primary uppercase tracking-wide">
           Fabricantes, no revendedores
         </p>
       </div>
