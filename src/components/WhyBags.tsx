@@ -8,7 +8,7 @@ const features = [
   },
   {
     icon: Leaf,
-    title: "Papel kraft ecológico",
+    title: "Papel ecológico",
     description: "Empaques responsables que refuerzan el valor y la conciencia de tu marca.",
   },
   {
