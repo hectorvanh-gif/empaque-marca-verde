@@ -3,13 +3,12 @@ const HeroMinimal = () => {
     <section id="inicio" className="min-h-[70vh] flex items-center justify-center bg-background pt-20">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-8">
-            Tu publicidad en cada venta
+          <h1 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-foreground leading-snug mb-10 max-w-5xl tracking-tight">
+            <span className="block">Diseñamos y fabricamos</span>
+            <span className="block text-primary">bolsas de papel y bolsas de tela</span>
+            <span className="block">personalizadas para que tu marca</span>
+            <span className="block font-semibold">venda, destaque y se recuerde.</span>
           </h1>
-          
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl">
-            Fabricamos bolsas de papel personalizadas para marcas que buscan destacar
-          </p>
           
           <a
             href="#contacto"
