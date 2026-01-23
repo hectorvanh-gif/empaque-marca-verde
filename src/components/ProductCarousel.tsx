@@ -22,7 +22,7 @@ const slides = [
   },
   {
     image: product3,
-    text: "Empaque con intención",
+    text: "Bolsas para retail",
   },
   {
     image: product4,
