@@ -12,7 +12,7 @@ import bolsaGrande from "@/assets/catalog/bolsa-grande.jpg";
 const products = [
   {
     title: "Bolsa Chica – Ideal para Regalo",
-    size: "18 × 8 × 22 cm",
+    size: "21 × 15 × 8 cm",
     description:
       "Pequeña en tamaño, enorme en intención. Perfecta para regalos, boutiques y detalles especiales.",
     bullets: [
