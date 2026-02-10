@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +36,7 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           {/* Logo con efecto hover */}
           <a 
-            href="#inicio" 
+            href={isHome ? "#inicio" : "/#inicio"}
             className="group flex items-center gap-4 transition-transform duration-300 hover:scale-105"
           >
             <div className="relative">
@@ -64,7 +66,7 @@ const Header = () => {
             {navItems.map((item) => (
               <li key={item.href}>
                 <a
-                  href={item.href}
+                  href={isHome ? item.href : `/${item.href}`}
                   className="relative px-5 py-2.5 text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-300 group"
                 >
                   <span className="relative z-10">{item.label}</span>
@@ -83,7 +85,7 @@ const Header = () => {
               📦 Catálogo
             </Link>
             <a
-              href="#contacto"
+              href={isHome ? "#contacto" : "/#contacto"}
               className="inline-flex items-center gap-2 px-7 py-3 bg-primary text-primary-foreground text-sm font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 group"
             >
               <span>Cotiza Ahora</span>
@@ -122,7 +124,7 @@ const Header = () => {
                 className={`transition-all duration-300 ${isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}`}
               >
                 <a
-                  href={item.href}
+                  href={isHome ? item.href : `/${item.href}`}
                   onClick={() => setIsMenuOpen(false)}
                   className="block px-4 py-3 text-lg font-medium text-foreground/80 hover:text-primary hover:bg-secondary/30 rounded-xl transition-all duration-200"
                 >
@@ -139,7 +141,7 @@ const Header = () => {
                 📦 Catálogo
               </Link>
               <a
-                href="#contacto"
+                href={isHome ? "#contacto" : "/#contacto"}
                 onClick={() => setIsMenuOpen(false)}
                 className="flex items-center justify-center gap-2 px-6 py-4 bg-primary text-primary-foreground font-semibold rounded-full shadow-lg"
               >
