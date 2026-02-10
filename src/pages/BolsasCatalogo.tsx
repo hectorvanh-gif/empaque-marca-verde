@@ -12,6 +12,7 @@ import bolsaGrande from "@/assets/catalog/bolsa-grande.jpg";
 const products = [
   {
     title: "Bolsa Chica – Ideal para Regalo",
+    size: "18 × 8 × 22 cm",
     description:
       "Pequeña en tamaño, enorme en intención. Perfecta para regalos, boutiques y detalles especiales.",
     bullets: [
@@ -24,6 +25,7 @@ const products = [
   },
   {
     title: "Bolsa Mediana – Ideal para Delivery",
+    size: "26 × 12 × 34 cm",
     description:
       "La más versátil. Diseñada para restaurantes, cafeterías y negocios con alto flujo de pedidos.",
     bullets: [
@@ -36,6 +38,7 @@ const products = [
   },
   {
     title: "Bolsa Grande – Ideal para Retail",
+    size: "32 × 12 × 41 cm",
     description:
       "Cuando tu producto necesita presencia. Ideal para retail, ropa y compras grandes.",
     bullets: [
@@ -120,9 +123,12 @@ const BolsasCatalogo = () => {
                     </div>
 
                     <div className="p-6 lg:p-8">
-                      <h3 className="font-display text-xl lg:text-2xl text-foreground mb-3">
+                      <h3 className="font-display text-xl lg:text-2xl text-foreground mb-1">
                         {product.title}
                       </h3>
+                      <span className="inline-block text-xs font-semibold tracking-wide text-accent bg-accent/10 px-3 py-1 rounded-full mb-3">
+                        📐 {product.size}
+                      </span>
                       <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                         {product.description}
                       </p>
