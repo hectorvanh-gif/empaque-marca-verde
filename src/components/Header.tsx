@@ -18,7 +18,6 @@ const Header = () => {
   const navItems = [
     { label: "Inicio", href: "#inicio" },
     { label: "Productos", href: "#productos" },
-    { label: "Catálogo", href: "/bolsas-catalogo", isRoute: true },
     { label: "Proceso", href: "#proceso" },
     { label: "Contacto", href: "#contacto" },
   ];
@@ -60,46 +59,44 @@ const Header = () => {
             </div>
           </a>
 
-          {/* Desktop Navigation con estilo premium */}
+          {/* Desktop Navigation */}
           <ul className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <li key={item.href}>
-                {item.isRoute ? (
-                  <Link
-                    to={item.href}
-                    className="relative px-5 py-2.5 text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-300 group"
-                  >
-                    <span className="relative z-10">{item.label}</span>
-                    <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-3/4 group-hover:left-[12.5%]" />
-                  </Link>
-                ) : (
-                  <a
-                    href={item.href}
-                    className="relative px-5 py-2.5 text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-300 group"
-                  >
-                    <span className="relative z-10">{item.label}</span>
-                    <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-3/4 group-hover:left-[12.5%]" />
-                  </a>
-                )}
+                <a
+                  href={item.href}
+                  className="relative px-5 py-2.5 text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-300 group"
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-3/4 group-hover:left-[12.5%]" />
+                </a>
               </li>
             ))}
           </ul>
 
-          {/* CTA Button con más presencia */}
-          <a
-            href="#contacto"
-            className="hidden lg:inline-flex items-center gap-2 px-7 py-3 bg-primary text-primary-foreground text-sm font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 group"
-          >
-            <span>Cotiza Ahora</span>
-            <svg 
-              className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
+            <Link
+              to="/bolsas-catalogo"
+              className="inline-flex items-center gap-2 px-7 py-3 bg-accent text-accent-foreground text-sm font-bold rounded-full hover:bg-accent/85 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5 ring-2 ring-accent/30 animate-pulse-subtle"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+              📦 Catálogo
+            </Link>
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-2 px-7 py-3 bg-primary text-primary-foreground text-sm font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 group"
+            >
+              <span>Cotiza Ahora</span>
+              <svg 
+                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -124,26 +121,23 @@ const Header = () => {
                 style={{ transitionDelay: `${index * 50}ms` }}
                 className={`transition-all duration-300 ${isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}`}
               >
-                {item.isRoute ? (
-                  <Link
-                    to={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block px-4 py-3 text-lg font-medium text-foreground/80 hover:text-primary hover:bg-secondary/30 rounded-xl transition-all duration-200"
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <a
-                    href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block px-4 py-3 text-lg font-medium text-foreground/80 hover:text-primary hover:bg-secondary/30 rounded-xl transition-all duration-200"
-                  >
-                    {item.label}
-                  </a>
-                )}
+                <a
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-4 py-3 text-lg font-medium text-foreground/80 hover:text-primary hover:bg-secondary/30 rounded-xl transition-all duration-200"
+                >
+                  {item.label}
+                </a>
               </li>
             ))}
-            <li className="pt-4">
+            <li className="pt-4 flex flex-col gap-3">
+              <Link
+                to="/bolsas-catalogo"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center justify-center gap-2 px-6 py-4 bg-accent text-accent-foreground font-bold rounded-full shadow-lg text-lg"
+              >
+                📦 Catálogo
+              </Link>
               <a
                 href="#contacto"
                 onClick={() => setIsMenuOpen(false)}
