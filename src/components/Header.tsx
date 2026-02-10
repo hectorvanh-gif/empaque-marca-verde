@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
@@ -17,6 +18,7 @@ const Header = () => {
   const navItems = [
     { label: "Inicio", href: "#inicio" },
     { label: "Productos", href: "#productos" },
+    { label: "Catálogo", href: "/bolsas-catalogo", isRoute: true },
     { label: "Proceso", href: "#proceso" },
     { label: "Contacto", href: "#contacto" },
   ];
@@ -62,14 +64,23 @@ const Header = () => {
           <ul className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="relative px-5 py-2.5 text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-300 group"
-                >
-                  <span className="relative z-10">{item.label}</span>
-                  {/* Underline animado */}
-                  <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-3/4 group-hover:left-[12.5%]" />
-                </a>
+                {item.isRoute ? (
+                  <Link
+                    to={item.href}
+                    className="relative px-5 py-2.5 text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-300 group"
+                  >
+                    <span className="relative z-10">{item.label}</span>
+                    <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-3/4 group-hover:left-[12.5%]" />
+                  </Link>
+                ) : (
+                  <a
+                    href={item.href}
+                    className="relative px-5 py-2.5 text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-300 group"
+                  >
+                    <span className="relative z-10">{item.label}</span>
+                    <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-3/4 group-hover:left-[12.5%]" />
+                  </a>
+                )}
               </li>
             ))}
           </ul>
@@ -113,13 +124,23 @@ const Header = () => {
                 style={{ transitionDelay: `${index * 50}ms` }}
                 className={`transition-all duration-300 ${isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}`}
               >
-                <a
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block px-4 py-3 text-lg font-medium text-foreground/80 hover:text-primary hover:bg-secondary/30 rounded-xl transition-all duration-200"
-                >
-                  {item.label}
-                </a>
+                {item.isRoute ? (
+                  <Link
+                    to={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-4 py-3 text-lg font-medium text-foreground/80 hover:text-primary hover:bg-secondary/30 rounded-xl transition-all duration-200"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-4 py-3 text-lg font-medium text-foreground/80 hover:text-primary hover:bg-secondary/30 rounded-xl transition-all duration-200"
+                  >
+                    {item.label}
+                  </a>
+                )}
               </li>
             ))}
             <li className="pt-4">
