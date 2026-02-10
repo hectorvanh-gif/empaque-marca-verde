@@ -41,7 +41,7 @@ const products = [
   },
   {
     title: "Bolsa Grande – Ideal para Retail",
-    size: "32 × 12 × 41 cm",
+    size: "33 × 13 × 25 cm",
     description:
       "Cuando tu producto necesita presencia. Ideal para retail, ropa y compras grandes.",
     bullets: [
