@@ -6,7 +6,7 @@ import { Check, Gift, Truck, ShoppingBag, Paintbrush, Palette, Shirt } from "luc
 
 import heroCatalog from "@/assets/catalog/hero-catalog.jpg";
 import bolsaChica from "@/assets/catalog/bolsa-chica.jpg";
-import bolsaMediana from "@/assets/catalog/bolsa-mediana.jpg";
+import bolsaMediana from "@/assets/catalog/bolsa-delivery-restaurante.jpg";
 import bolsaGrande from "@/assets/catalog/bolsa-grande.jpg";
 import bolsaBlancaGrande from "@/assets/catalog/bolsa-blanca-grande.jpg";
 import bolsaTela from "@/assets/catalog/bolsa-tela.jpg";
