@@ -2,12 +2,15 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { Check, Gift, Truck, ShoppingBag, Paintbrush } from "lucide-react";
+import { Check, Gift, Truck, ShoppingBag, Paintbrush, Palette, Shirt } from "lucide-react";
 
 import heroCatalog from "@/assets/catalog/hero-catalog.jpg";
 import bolsaChica from "@/assets/catalog/bolsa-chica.jpg";
 import bolsaMediana from "@/assets/catalog/bolsa-mediana.jpg";
 import bolsaGrande from "@/assets/catalog/bolsa-grande.jpg";
+import bolsaBlancaGrande from "@/assets/catalog/bolsa-blanca-grande.jpg";
+import bolsaTela from "@/assets/catalog/bolsa-tela.jpg";
+import bolsaColorGrande from "@/assets/catalog/bolsa-color-grande.jpg";
 
 const products = [
   {
@@ -48,6 +51,45 @@ const products = [
     ],
     image: bolsaGrande,
     icon: ShoppingBag,
+  },
+  {
+    title: "Bolsa Blanca Grande – Retail Premium",
+    size: "16 × 7 × 18 pulgadas",
+    description:
+      "Elegancia en cada entrega. Bolsa blanca de papel grueso ideal para boutiques, joyerías y tiendas premium.",
+    bullets: [
+      "Uso: Retail premium, boutiques y tiendas de lujo",
+      "Material: Papel blanco grueso y resistente",
+      "Sensación de marca: Elegancia y sofisticación",
+    ],
+    image: bolsaBlancaGrande,
+    icon: ShoppingBag,
+  },
+  {
+    title: "Bolsa de Tela – Reutilizable",
+    size: "16 × 7 × 18 pulgadas",
+    description:
+      "Sustentable y duradera. Bolsa de tela de algodón perfecta para marcas eco-conscientes que buscan impacto duradero.",
+    bullets: [
+      "Uso: Retail sustentable y promocional",
+      "Material: Tela de algodón resistente",
+      "Sensación de marca: Sustentabilidad y calidad",
+    ],
+    image: bolsaTela,
+    icon: Shirt,
+  },
+  {
+    title: "Bolsa de Color Grande – Retail",
+    size: "16 × 7 × 18 pulgadas",
+    description:
+      "Dale color a tu marca. Bolsa grande disponible en múltiples colores vibrantes para destacar en cada compra.",
+    bullets: [
+      "Uso: Retail, tiendas de ropa y accesorios",
+      "Material: Papel de color grueso con asas",
+      "Sensación de marca: Energía y personalidad",
+    ],
+    image: bolsaColorGrande,
+    icon: Palette,
   },
 ];
 
@@ -102,7 +144,7 @@ const BolsasCatalogo = () => {
               Encuentra la bolsa perfecta para cada necesidad de tu negocio
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
               {products.map((product) => {
                 const Icon = product.icon;
                 return (
