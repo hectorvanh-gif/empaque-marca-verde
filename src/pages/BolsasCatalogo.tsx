@@ -54,7 +54,7 @@ const products = [
   },
   {
     title: "Bolsa Blanca Grande – Retail Premium",
-    size: "16 × 7 × 18 pulgadas",
+    size: "41 × 18 × 46 cm",
     description:
       "Elegancia en cada entrega. Bolsa blanca de papel grueso ideal para boutiques, joyerías y tiendas premium.",
     bullets: [
@@ -67,7 +67,7 @@ const products = [
   },
   {
     title: "Bolsa de Tela – Reutilizable",
-    size: "16 × 7 × 18 pulgadas",
+    size: "41 × 18 × 46 cm",
     description:
       "Sustentable y duradera. Bolsa de tela de algodón perfecta para marcas eco-conscientes que buscan impacto duradero.",
     bullets: [
@@ -80,7 +80,7 @@ const products = [
   },
   {
     title: "Bolsa de Color Grande – Retail",
-    size: "16 × 7 × 18 pulgadas",
+    size: "41 × 18 × 46 cm",
     description:
       "Dale color a tu marca. Bolsa grande disponible en múltiples colores vibrantes para destacar en cada compra.",
     bullets: [
