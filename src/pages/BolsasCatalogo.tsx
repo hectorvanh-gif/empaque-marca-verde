@@ -11,6 +11,7 @@ import catKraftImpresion from "@/assets/catalog/cat-kraft-impresion.jpg";
 import catLaminadoMate from "@/assets/catalog/cat-laminado-mate.jpg";
 import catAltoBrillo from "@/assets/catalog/cat-alto-brillo.jpg";
 import catNavidenas from "@/assets/catalog/cat-navidenas.jpg";
+import catToteBags from "@/assets/catalog/cat-tote-bags.jpg";
 
 const categories = [
   { title: "Bolsas de Papel Kraft Reciclado", image: catKraftReciclado },
@@ -21,6 +22,7 @@ const categories = [
   { title: "Bolsas de Laminado Mate", image: catLaminadoMate },
   { title: "Bolsas de Alto Brillo", image: catAltoBrillo },
   { title: "Bolsas Navideñas Estilo Europeo", image: catNavidenas },
+  { title: "Tote Bags", image: catToteBags },
 ];
 
 const BolsasCatalogo = () => {
