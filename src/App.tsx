@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import BolsasCatalogo from "./pages/BolsasCatalogo";
+import BolsasKraftReciclado from "./pages/BolsasKraftReciclado";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
