@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -10,7 +11,7 @@ import catKraftImpresion from "@/assets/catalog/cat-kraft-impresion.jpg";
 import catToteBags from "@/assets/catalog/cat-tote-bags.jpg";
 
 const categories = [
-  { title: "Bolsas de Papel Kraft Reciclado", image: catKraftReciclado },
+  { title: "Bolsas de Papel Kraft Reciclado", image: catKraftReciclado, to: "/bolsas-kraft-reciclado" },
   { title: "Bolsas de Papel para Retail", image: catPapelModernas },
   { title: "Bolsas Kraft Estilo Europeo", image: catKraftEuropeo },
   { title: "Bolsas de Papel Kraft con Impresión", image: catKraftImpresion },
@@ -75,27 +76,38 @@ const BolsasCatalogo = () => {
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-              {categories.map((cat) => (
-                <a
-                  key={cat.title}
-                  href={`https://wa.me/5215545925827?text=Hola%2C%20me%20interesan%20las%20${encodeURIComponent(cat.title)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-col items-center text-center"
-                >
-                  <div className="w-full aspect-square mb-5 flex items-center justify-center overflow-hidden bg-card rounded-2xl shadow-card hover:shadow-elevated transition-all duration-500 group-hover:-translate-y-1 border border-border/10 p-4">
-                    <img
-                      src={cat.image}
-                      alt={cat.title}
-                      className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h3 className="font-display text-sm md:text-base lg:text-lg text-foreground font-semibold leading-tight group-hover:text-primary transition-colors duration-300">
-                    {cat.title}
-                  </h3>
-                </a>
-              ))}
+              {categories.map((cat) => {
+                const content = (
+                  <>
+                    <div className="w-full aspect-square mb-5 flex items-center justify-center overflow-hidden bg-card rounded-2xl shadow-card hover:shadow-elevated transition-all duration-500 group-hover:-translate-y-1 border border-border/10 p-4">
+                      <img
+                        src={cat.image}
+                        alt={cat.title}
+                        className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h3 className="font-display text-sm md:text-base lg:text-lg text-foreground font-semibold leading-tight group-hover:text-primary transition-colors duration-300">
+                      {cat.title}
+                    </h3>
+                  </>
+                );
+                return cat.to ? (
+                  <Link key={cat.title} to={cat.to} className="group flex flex-col items-center text-center">
+                    {content}
+                  </Link>
+                ) : (
+                  <a
+                    key={cat.title}
+                    href={`https://wa.me/5215545925827?text=Hola%2C%20me%20interesan%20las%20${encodeURIComponent(cat.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex flex-col items-center text-center"
+                  >
+                    {content}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </section>
