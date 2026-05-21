@@ -11,7 +11,7 @@ import catToteBags from "@/assets/catalog/cat-tote-bags.jpg";
 
 const categories = [
   { title: "Bolsas de Papel Kraft Reciclado", image: catKraftReciclado },
-  { title: "Bolsas de Papel Modernas", image: catPapelModernas },
+  { title: "Bolsas de Papel para Retail", image: catPapelModernas },
   { title: "Bolsas Kraft Estilo Europeo", image: catKraftEuropeo },
   { title: "Bolsas de Papel Kraft con Impresión", image: catKraftImpresion },
   { title: "Tote Bags", image: catToteBags },
