@@ -5,23 +5,15 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 import catKraftReciclado from "@/assets/catalog/cat-kraft-reciclado.jpg";
 import catPapelModernas from "@/assets/catalog/cat-papel-modernas.jpg";
-import catEuropeoListon from "@/assets/catalog/cat-europeo-liston.jpg";
 import catKraftEuropeo from "@/assets/catalog/cat-kraft-europeo.jpg";
 import catKraftImpresion from "@/assets/catalog/cat-kraft-impresion.jpg";
-import catLaminadoMate from "@/assets/catalog/cat-laminado-mate.jpg";
-import catAltoBrillo from "@/assets/catalog/cat-alto-brillo.jpg";
-import catNavidenas from "@/assets/catalog/cat-navidenas.jpg";
 import catToteBags from "@/assets/catalog/cat-tote-bags.jpg";
 
 const categories = [
   { title: "Bolsas de Papel Kraft Reciclado", image: catKraftReciclado },
   { title: "Bolsas de Papel Modernas", image: catPapelModernas },
-  { title: "Bolsa Estilo Europeo con Asas de Listón", image: catEuropeoListon },
   { title: "Bolsas Kraft Estilo Europeo", image: catKraftEuropeo },
   { title: "Bolsas de Papel Kraft con Impresión", image: catKraftImpresion },
-  { title: "Bolsas de Laminado Mate", image: catLaminadoMate },
-  { title: "Bolsas de Alto Brillo", image: catAltoBrillo },
-  { title: "Bolsas Navideñas Estilo Europeo", image: catNavidenas },
   { title: "Tote Bags", image: catToteBags },
 ];
 
