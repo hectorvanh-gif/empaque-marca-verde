@@ -7,16 +7,29 @@ const HeroMinimal = () => {
             <span className="block">Diseñamos y fabricamos <span className="text-primary">bolsas de papel y de tela</span> personalizadas</span>
             <span className="block">para que tu marca <span className="font-semibold">venda más, destaque y se recuerde.</span></span>
           </h1>
-          
+
+          {/* Video de fabricación */}
+          <div className="w-full max-w-3xl mb-10 rounded-2xl overflow-hidden shadow-2xl">
+            <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+              <iframe
+                src="https://www.pexels.com/video/18694869/embed/?autoplay=1&loop=1&muted=1"
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                title="Fabricación de bolsas de papel"
+              />
+            </div>
+          </div>
+
           <a
             href="#contacto"
             className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 text-lg group"
           >
             <span>Cotiza tus bolsas personalizadas</span>
-            <svg 
-              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
-              fill="none" 
-              viewBox="0 0 24 24" 
+            <svg
+              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
               stroke="currentColor"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
