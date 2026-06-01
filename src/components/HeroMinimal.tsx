@@ -10,15 +10,15 @@ const HeroMinimal = () => {
 
           {/* Video de fabricación */}
           <div className="w-full max-w-3xl mb-10 rounded-2xl overflow-hidden shadow-2xl">
-            <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-              <iframe
-                src="https://www.pexels.com/video/18694869/embed/?autoplay=1&loop=1&muted=1"
-                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                title="Fabricación de bolsas de papel"
-              />
-            </div>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto"
+            >
+              <source src="https://videos.pexels.com/video-files/18694869/18694869-hd_1920_1080_24fps.mp4" type="video/mp4" />
+            </video>
           </div>
 
           <a
