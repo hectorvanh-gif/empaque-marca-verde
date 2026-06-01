@@ -11,7 +11,7 @@ const HeroMinimal = () => {
               loop
               muted
               playsInline
-              className="w-full h-auto"
+              className="w-full h-[320px] md:h-[420px] object-cover"
             >
               <source src="https://videos.pexels.com/video-files/18694869/18694869-hd_1920_1080_24fps.mp4" type="video/mp4" />
             </video>
