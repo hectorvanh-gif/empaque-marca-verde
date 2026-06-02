@@ -27,9 +27,9 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "bg-background/95 backdrop-blur-md shadow-lg py-2" 
-          : "bg-transparent py-4"
+        isScrolled
+          ? "bg-background/95 backdrop-blur-md shadow-lg py-2"
+          : "bg-black/20 backdrop-blur-sm py-4"
       }`}
     >
       <div className="container mx-auto px-6">
@@ -46,16 +46,16 @@ const Header = () => {
                 src={logo} 
                 alt="La Bolsa de Tu Marca - Bolsas de papel personalizadas" 
                 className={`relative z-10 w-auto transition-all duration-500 ${
-                  isScrolled ? "h-16" : "h-20 lg:h-24"
+                  isScrolled ? "h-14" : "h-20 lg:h-28"
                 }`}
               />
             </div>
             {/* Tagline que aparece en hover */}
             <div className="hidden lg:flex flex-col opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-10px] group-hover:translate-x-0">
-              <span className="text-xs font-medium text-primary tracking-widest uppercase">
+              <span className={`text-xs font-medium tracking-widest uppercase ${isScrolled ? "text-primary" : "text-white"}`}>
                 Fabricantes
               </span>
-              <span className="text-sm text-muted-foreground">
+              <span className={`text-sm ${isScrolled ? "text-muted-foreground" : "text-white/80"}`}>
                 Bolsas de papel kraft
               </span>
             </div>
