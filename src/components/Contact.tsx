@@ -45,40 +45,17 @@ const Contact = () => {
     }
 
     try {
-      // Use edge function for server-side validation and rate limiting
-      const response = await supabase.functions.invoke('submit-quote', {
-        body: {
-          nombre: formData.name.trim(),
-          empresa: formData.company.trim() || null,
-          correo: formData.email.trim(),
-          telefono: formData.phone.trim() || null,
-          mensaje: formData.message.trim() || 'Sin mensaje adicional',
-        }
+      // Insert directly to Supabase (RLS allows public inserts)
+      const { error: insertError } = await supabase.from('cotizaciones').insert({
+        nombre: formData.name.trim(),
+        empresa: formData.company.trim() || null,
+        correo: formData.email.trim(),
+        telefono: formData.phone.trim() || null,
+        mensaje: formData.message.trim() || 'Sin mensaje adicional',
       });
 
-      if (response.error) {
-        throw new Error(response.error.message || 'Error al enviar');
-      }
-
-      if (response.data?.error) {
-        // Handle rate limiting specifically
-        if (response.data.code === 'RATE_LIMITED') {
-          toast({
-            title: "Límite alcanzado",
-            description: response.data.error,
-            variant: "destructive",
-          });
-          setIsSubmitting(false);
-          return;
-        }
-        
-        toast({
-          title: "Error",
-          description: response.data.error,
-          variant: "destructive",
-        });
-        setIsSubmitting(false);
-        return;
+      if (insertError) {
+        throw new Error(insertError.message);
       }
 
       // Create WhatsApp message with form data
