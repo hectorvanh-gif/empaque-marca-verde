@@ -31,7 +31,7 @@ const Process = () => {
             Proceso Simple
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-            ¿Cómo Funciona?
+            ¿Cómo Fabricamos tus Bolsas de Papel?
           </h2>
           <p className="text-muted-foreground text-lg">
             Obtener tus bolsas personalizadas es fácil. Sigue estos tres pasos y tendrás 

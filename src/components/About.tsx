@@ -30,7 +30,7 @@ const About = () => {
             </span>
             
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-tight">
-              La Bolsa de Tu Marca: Tu publicidad en cada venta
+              Fabricantes de Bolsas de Papel en México
             </h2>
             
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">

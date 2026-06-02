@@ -37,7 +37,7 @@ const Benefits = () => {
             ¿Por Qué Elegirnos?
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mb-6">
-            Beneficios de Trabajar con Nosotros
+            ¿Por Qué Elegir Nuestras Bolsas de Papel?
           </h2>
           <p className="text-accent-foreground/80 text-lg">
             Más que proveedores, somos aliados de tu marca. Ofrecemos soluciones de empaque 

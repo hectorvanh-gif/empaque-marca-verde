@@ -31,7 +31,7 @@ const Testimonials = () => {
             Testimonios
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-            Lo Que Dicen Nuestros Clientes
+            Marcas que ya usan nuestras Bolsas de Papel
           </h2>
           <p className="text-muted-foreground text-lg">
             La confianza de nuestros clientes es nuestro mayor logro. Conoce las experiencias 
