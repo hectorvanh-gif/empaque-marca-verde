@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import NavLink from "./NavLink";
+import { NavLink } from "./NavLink";
 import logo from "@/assets/logo.png";
 
 const WA_NEW = "https://wa.me/525545925827?text=Hola%2C%20quiero%20cotizar%20bolsas%20de%20papel%20kraft.%20Mi%20negocio%20es%20%5Btipo%20de%20negocio%20o%20producto%20que%20vendo%5D%2C%20la%20bolsa%20que%20necesito%20es%20de%20aproximadamente%20%5Bancho%20%C3%97%20alto%5D%20cm%20y%20calculo%20unas%20%5Bcantidad%5D%20piezas.%20%C2%BFMe%20pueden%20ayudar%20a%20elegir%20el%20gramaje%3F";
@@ -44,7 +44,7 @@ const Header = () => {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <NavLink key={link.label} href={link.href}>
+              <NavLink key={link.label} to={link.href}>
                 {link.label}
               </NavLink>
             ))}
@@ -82,7 +82,7 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-border/20 bg-background/95 backdrop-blur-md">
             <nav className="flex flex-col gap-4 px-2 mb-4">
               {navLinks.map((link) => (
-                <NavLink key={link.label} href={link.href} onClick={() => setIsMobileMenuOpen(false)}>
+                <NavLink key={link.label} to={link.href} onClick={() => setIsMobileMenuOpen(false)}>
                   {link.label}
                 </NavLink>
               ))}
