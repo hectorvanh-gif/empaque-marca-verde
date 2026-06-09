@@ -69,7 +69,7 @@ const BolsasCatalogo = () => {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+            <div className="flex flex-wrap justify-center gap-6 md:gap-10">
               {categories.map((cat) => {
                 const content = (
                   <>
@@ -87,7 +87,7 @@ const BolsasCatalogo = () => {
                   </>
                 );
                 return cat.href ? (
-                  <a key={cat.title} href={cat.href} className="group flex flex-col items-center text-center">
+                  <a key={cat.title} href={cat.href} className="group flex flex-col items-center text-center w-56 md:w-64">
                     {content}
                   </a>
                 ) : (
@@ -96,7 +96,7 @@ const BolsasCatalogo = () => {
                     href={`https://wa.me/5215545925827?text=Hola%2C%20me%20interesan%20las%20${encodeURIComponent(cat.title)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex flex-col items-center text-center"
+                    className="group flex flex-col items-center text-center w-56 md:w-64"
                   >
                     {content}
                   </a>
