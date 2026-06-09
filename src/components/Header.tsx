@@ -44,7 +44,13 @@ const Header = () => {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <NavLink key={link.label} to={link.href}>
+              <NavLink
+                key={link.label}
+                to={link.href}
+                className={`text-sm font-medium transition-colors duration-200 hover:opacity-80 ${
+                  isScrolled ? "text-foreground/80" : "text-white"
+                }`}
+              >
                 {link.label}
               </NavLink>
             ))}
