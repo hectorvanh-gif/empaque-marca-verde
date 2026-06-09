@@ -8,7 +8,7 @@ import catKraftReciclado from "@/assets/catalog/cat-kraft-reciclado.jpg";
 import catToteBags from "@/assets/catalog/cat-tote-bags.jpg";
 
 const categories = [
-  { title: "Bolsas de Papel Kraft Reciclado", image: catKraftReciclado, to: "/bolsas-kraft-reciclado" },
+  { title: "Bolsas de Papel Kraft Reciclado", image: catKraftReciclado, href: "/bolsas-kraft-reciclado.html" },
   { title: "Tote Bags", image: catToteBags },
 ];
 
@@ -86,10 +86,10 @@ const BolsasCatalogo = () => {
                     </h3>
                   </>
                 );
-                return cat.to ? (
-                  <Link key={cat.title} to={cat.to} className="group flex flex-col items-center text-center">
+                return cat.href ? (
+                  <a key={cat.title} href={cat.href} className="group flex flex-col items-center text-center">
                     {content}
-                  </Link>
+                  </a>
                 ) : (
                   <a
                     key={cat.title}
