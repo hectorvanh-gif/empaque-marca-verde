@@ -48,7 +48,7 @@ const FinalCTA = () => {
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#25D366] text-white font-semibold rounded-full hover:bg-[#1ebe5d] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
               >
                 <IconWA />
-                Escribir por WhatsApp
+                Cotiza Ahora
               </a>
               <p className="text-xs text-primary-foreground/50 mt-3">
                 Respondemos en menos de 24 h · <strong className="text-primary-foreground/70">55 4592 5827</strong>
@@ -99,7 +99,7 @@ const FinalCTA = () => {
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-transparent text-primary-foreground font-semibold rounded-full border-2 border-[#25D366] hover:bg-[#25D366]/10 transition-all duration-300 hover:-translate-y-0.5 text-sm"
               >
                 <IconWA />
-                Cotizar por WhatsApp
+                Cotiza Ahora
               </a>
               <p className="text-xs text-primary-foreground/50 mt-3">
                 <strong className="text-primary-foreground/70">55 4592 5827</strong>

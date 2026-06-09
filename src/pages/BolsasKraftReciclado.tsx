@@ -119,7 +119,7 @@ const BolsasKraftReciclado = () => {
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 text-base"
                 >
                   <IconWA />
-                  Escríbenos por WhatsApp
+                  Cotiza Ahora
                 </a>
               </div>
               <div className="aspect-square bg-card rounded-2xl shadow-card overflow-hidden p-6 flex items-center justify-center">
@@ -305,7 +305,7 @@ const BolsasKraftReciclado = () => {
                   className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#25D366] text-white font-semibold rounded-full hover:bg-[#1ebe5d] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
                 >
                   <IconWA />
-                  Escribir por WhatsApp
+                  Cotiza Ahora
                 </a>
                 <p className="text-xs text-muted-foreground mt-3">
                   Respondemos en menos de 24 h · <strong>55 4592 5827</strong>
@@ -356,7 +356,7 @@ const BolsasKraftReciclado = () => {
                   className="inline-flex items-center gap-2 px-7 py-3.5 bg-foreground text-background font-semibold rounded-full hover:bg-foreground/90 transition-all duration-300 border-2 border-[#25D366] shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
                 >
                   <IconWA />
-                  Cotizar por WhatsApp
+                  Cotiza Ahora
                 </a>
                 <p className="text-xs text-muted-foreground mt-3">
                   <strong>55 4592 5827</strong>

@@ -86,7 +86,7 @@ const Process = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center text-accent font-semibold hover:text-primary transition-colors"
           >
-            Escríbenos por WhatsApp
+            Cotiza Ahora
             <span className="ml-2">→</span>
           </a>
         </div>

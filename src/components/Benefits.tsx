@@ -83,7 +83,7 @@ const Benefits = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 bg-secondary text-secondary-foreground font-semibold rounded-lg hover:bg-secondary/90 transition-all duration-300 shadow-elevated"
           >
-            Solicita Tu Cotización
+            Cotiza Ahora
           </a>
         </div>
       </div>
