@@ -26,7 +26,9 @@ const HeroMinimal = () => {
           </h1>
 
           <a
-            href="#contacto"
+            href="https://wa.me/525545925827?text=Hola%2C%20quiero%20cotizar%20bolsas%20de%20papel%20kraft.%20Mi%20negocio%20es%20%5Btipo%20de%20negocio%20o%20producto%20que%20vendo%5D%2C%20la%20bolsa%20que%20necesito%20es%20de%20aproximadamente%20%5Bancho%20%C3%97%20alto%5D%20cm%20y%20calculo%20unas%20%5Bcantidad%5D%20piezas.%20%C2%BFMe%20pueden%20ayudar%20a%20elegir%20el%20gramaje%3F"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-white text-primary font-semibold rounded-full hover:bg-white/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 text-lg group"
           >
             <span>Cotiza tus bolsas personalizadas</span>

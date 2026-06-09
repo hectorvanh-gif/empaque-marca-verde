@@ -4,17 +4,74 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import catKraftReciclado from "@/assets/catalog/cat-kraft-reciclado.jpg";
 
-const sizes = [
-  { tamano: "4", codigo: "AK-4", ancho: "12.5", largo: "22.0", fuelle: "7.0", bolsas: "250", kilos: "3.5" },
-  { tamano: "6", codigo: "AK-6", ancho: "15.0", largo: "24.0", fuelle: "8.0", bolsas: "250", kilos: "5.7" },
-  { tamano: "12", codigo: "AK-12", ancho: "18.0", largo: "30.0", fuelle: "10.0", bolsas: "250", kilos: "7.6" },
-  { tamano: "20", codigo: "AK-20", ancho: "21.0", largo: "35.0", fuelle: "12.0", bolsas: "250", kilos: "9.5" },
-  { tamano: "40c", codigo: "AK-40c", ancho: "30.0", largo: "30.0", fuelle: "12.5", bolsas: "250", kilos: "10.5" },
-  { tamano: "40", codigo: "AK-40", ancho: "30.0", largo: "45.0", fuelle: "12.5", bolsas: "250", kilos: "12.5" },
+// ── Datos del catálogo ──────────────────────────────────────────────────────
+const lines = [
+  {
+    id: "asa",
+    label: "Bolsas con Asa",
+    sizes: [
+      { talla: "Chica",   medidas: "14.5 × 21.5 × 7.5", gramaje: "70–80 g/m²",    uso: "Joyería, cosméticos, accesorios pequeños" },
+      { talla: "Mediana", medidas: "19 × 26.5 × 8",      gramaje: "80–90 g/m²",    uso: "Ropa ligera, calzado chico, farmacia",     std: true },
+      { talla: "Grande",  medidas: "30 × 39 × 18",       gramaje: "100–120 g/m²",  uso: "Retail general, calzado adulto, ropa" },
+      { talla: "Jumbo",   medidas: "33 × 47 × 12",       gramaje: "110–130 g/m²",  uso: "Boutique, artículos voluminosos, prendas" },
+    ],
+  },
+  {
+    id: "delivery",
+    label: "Delivery",
+    sizes: [
+      { talla: "Única",   medidas: "30 × 40 × 18",       gramaje: "90–100 g/m²",   uso: "Restaurantes, food delivery, alimentos preparados" },
+    ],
+  },
+  {
+    id: "boutique",
+    label: "Boutique (sin asa)",
+    sizes: [
+      { talla: "Chica",   medidas: "20.5 × 14 × 9",      gramaje: "60–70 g/m²",    uso: "Joyería, perfumería, detalle" },
+      { talla: "Mediana", medidas: "30 × 22 × 12",        gramaje: "80–90 g/m²",    uso: "Moda, cosmética, vinos",                  std: true },
+      { talla: "Grande",  medidas: "33 × 26 × 14.5",      gramaje: "90–100 g/m²",   uso: "Retail premium, ropa doblada" },
+    ],
+  },
+  {
+    id: "botella",
+    label: "Botella",
+    sizes: [
+      { talla: "Única",   medidas: "12 × 35 × 9",         gramaje: "100–120 g/m²",  uso: "Vinos, licores, aceites gourmet — mín. 100 g recomendado" },
+    ],
+  },
 ];
 
-const waLink = "https://wa.me/5215545925827?text=Hola%2C%20me%20interesan%20las%20Bolsas%20de%20Papel%20Kraft%20Reciclado";
+const WA_BASE = "https://wa.me/525545925827";
+const waNew  = `${WA_BASE}?text=Hola%2C%20quiero%20cotizar%20bolsas%20de%20papel%20kraft.%20Mi%20negocio%20es%20%5Btipo%20de%20negocio%20o%20producto%20que%20vendo%5D%2C%20la%20bolsa%20que%20necesito%20es%20de%20aproximadamente%20%5Bancho%20%C3%97%20alto%5D%20cm%20y%20calculo%20unas%20%5Bcantidad%5D%20piezas.%20%C2%BFMe%20pueden%20ayudar%20a%20elegir%20el%20gramaje%3F`;
+const waB2B  = `${WA_BASE}?text=Hola%2C%20soy%20comprador%20de%20%5Bempresa%5D.%20Requiero%20cotizaci%C3%B3n%20de%20%5Bmedida%20y%20gramaje%5D%2C%20volumen%20estimado%20%5Bcantidad%5D.%20%C2%BFPueden%20enviarme%20propuesta%3F`;
+const EMAIL  = "mailto:labolsadetumarca@gmail.com?subject=Cotizaci%C3%B3n%20bolsas%20kraft%20%E2%80%94%20compra%20corporativa&body=Hola%2C%0A%0ASoy%20comprador%20de%20%5Bempresa%5D.%20Requiero%20cotizaci%C3%B3n%20de%20%5Bl%C3%ADnea%2C%20medida%20y%20gramaje%5D%2C%20volumen%20estimado%20%5Bcantidad%5D.%0A%0A%C2%BFPueden%20enviarme%20propuesta%3F%0A%0AGracias.";
 
+// ── Iconos SVG inline ───────────────────────────────────────────────────────
+const IconShield = () => (
+  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </svg>
+);
+const IconPrint = () => (
+  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="6 9 6 2 18 2 18 9"/>
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+    <rect x="6" y="14" width="12" height="8"/>
+  </svg>
+);
+const IconWA = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.18-1.62A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.67-.5-5.25-1.43l-.38-.22-3.67.96.98-3.58-.25-.38A9.94 9.94 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.94 9.94 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.47-7.4c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51H8.1c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.62.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/>
+  </svg>
+);
+const IconMail = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+  </svg>
+);
+
+// ── Componente principal ────────────────────────────────────────────────────
 const BolsasKraftReciclado = () => {
   return (
     <>
@@ -22,34 +79,46 @@ const BolsasKraftReciclado = () => {
         <title>Bolsas de Papel Kraft Reciclado | Medidas y Precios | BolsasMX</title>
         <meta
           name="description"
-          content="Bolsas de papel kraft reciclado fabricadas en México. Consulta todas las medidas, códigos y presentación por bulto. Solicita tu cotización."
+          content="Bolsas de papel kraft reciclado fabricadas en México. Líneas con asa, delivery, boutique y botella. Certificación FSC, impresión a 2 tintas. Solicita cotización."
         />
         <link rel="canonical" href="https://www.bolsasmx.com/bolsas-kraft-reciclado" />
       </Helmet>
       <Header />
 
       <main className="min-h-screen bg-background">
-        {/* HERO */}
+
+        {/* ── HERO ── */}
         <section className="pt-28 pb-12 md:pt-32 md:pb-16 bg-gradient-sage">
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
               <div>
                 <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-3">
-                  Catálogo estándar
+                  Catálogo · Bolsas Kraft
                 </span>
-                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight mb-5">
-                  Bolsas de Papel <span className="text-primary">Kraft Reciclado</span>
+                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight mb-4">
+                  Bolsas de Papel{" "}
+                  <span className="text-primary">Kraft Reciclado</span>
                 </h1>
-                <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                  Fabricadas en México con papel kraft 100% reciclado. Disponibles en
-                  múltiples medidas estándar y personalizables con tu marca.
+                <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                  Fabricadas en México con papel kraft 100% reciclado. Cuatro líneas
+                  para retail, delivery, boutique y vinos — con o sin impresión de tu marca.
                 </p>
+                {/* Badges */}
+                <div className="flex flex-wrap gap-2 mb-8">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border bg-green-50 text-green-800 border-green-200">
+                    <IconShield /> Certificación FSC
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border bg-blue-50 text-blue-800 border-blue-200">
+                    <IconPrint /> Impresión a 2 tintas
+                  </span>
+                </div>
                 <a
-                  href={waLink}
+                  href={waNew}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 text-base"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 text-base"
                 >
+                  <IconWA />
                   Escríbenos por WhatsApp
                 </a>
               </div>
@@ -64,17 +133,20 @@ const BolsasKraftReciclado = () => {
           </div>
         </section>
 
-        {/* TABLA DE MEDIDAS */}
+        {/* ── TABLA DE MEDIDAS ── */}
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-6 max-w-5xl">
             <div className="text-center mb-12">
               <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-3">
-                Medidas disponibles
+                Medidas estándar
               </span>
               <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3">
                 Tabla de tamaños
               </h2>
-              <p className="text-muted-foreground">Todas las medidas en centímetros.</p>
+              <p className="text-muted-foreground">
+                Todas las medidas en cm: Ancho × Alto × Fuelle. El gramaje base puede
+                ajustarse según el peso del contenido.
+              </p>
             </div>
 
             {/* Desktop table */}
@@ -82,85 +154,219 @@ const BolsasKraftReciclado = () => {
               <table className="w-full text-left">
                 <thead className="bg-primary text-primary-foreground">
                   <tr>
-                    <th className="px-5 py-4 font-display font-semibold">Tamaño</th>
-                    <th className="px-5 py-4 font-display font-semibold">Código</th>
-                    <th className="px-5 py-4 font-display font-semibold">Ancho (cm)</th>
-                    <th className="px-5 py-4 font-display font-semibold">Largo (cm)</th>
-                    <th className="px-5 py-4 font-display font-semibold">Fuelle (cm)</th>
-                    <th className="px-5 py-4 font-display font-semibold">Bolsas por bulto</th>
-                    <th className="px-5 py-4 font-display font-semibold">Kilos por bulto</th>
+                    <th className="px-5 py-4 font-display font-semibold">Línea</th>
+                    <th className="px-5 py-4 font-display font-semibold">Talla</th>
+                    <th className="px-5 py-4 font-display font-semibold">Medidas (cm)</th>
+                    <th className="px-5 py-4 font-display font-semibold">Gramaje base</th>
+                    <th className="px-5 py-4 font-display font-semibold">Uso recomendado</th>
                   </tr>
                 </thead>
                 <tbody className="bg-card">
-                  {sizes.map((s, i) => (
-                    <tr
-                      key={s.codigo}
-                      className={`border-t border-border/20 ${i % 2 === 1 ? "bg-secondary/30" : ""} hover:bg-secondary/50 transition-colors`}
-                    >
-                      <td className="px-5 py-4 font-semibold text-primary">{s.tamano}</td>
-                      <td className="px-5 py-4 text-foreground">{s.codigo}</td>
-                      <td className="px-5 py-4 text-foreground">{s.ancho}</td>
-                      <td className="px-5 py-4 text-foreground">{s.largo}</td>
-                      <td className="px-5 py-4 text-foreground">{s.fuelle}</td>
-                      <td className="px-5 py-4 text-foreground">{s.bolsas}</td>
-                      <td className="px-5 py-4 text-foreground">{s.kilos}</td>
-                    </tr>
-                  ))}
+                  {lines.map((line) =>
+                    line.sizes.map((s, i) => (
+                      <tr
+                        key={`${line.id}-${s.talla}`}
+                        className={`border-t border-border/20 ${i % 2 === 1 ? "bg-secondary/30" : ""} hover:bg-secondary/50 transition-colors`}
+                      >
+                        {i === 0 && (
+                          <td
+                            className="px-5 py-4 font-semibold text-primary text-sm align-top"
+                            rowSpan={line.sizes.length}
+                          >
+                            {line.label}
+                          </td>
+                        )}
+                        <td className="px-5 py-4 text-foreground font-medium">{s.talla}</td>
+                        <td className="px-5 py-4 font-mono text-sm text-foreground">{s.medidas}</td>
+                        <td className="px-5 py-4 text-foreground text-sm">
+                          {s.gramaje}
+                          {s.std && (
+                            <span className="ml-2 text-xs font-semibold bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
+                              Estándar
+                            </span>
+                          )}
+                        </td>
+                        <td className="px-5 py-4 text-muted-foreground text-sm">{s.uso}</td>
+                      </tr>
+                    ))
+                  )}
                 </tbody>
               </table>
             </div>
 
             {/* Mobile cards */}
-            <div className="md:hidden grid gap-4">
-              {sizes.map((s) => (
-                <div key={s.codigo} className="bg-card rounded-xl shadow-card border border-border/20 p-5">
-                  <div className="flex items-center justify-between mb-3 pb-3 border-b border-border/20">
-                    <div>
-                      <p className="text-xs uppercase tracking-wider text-muted-foreground">Tamaño</p>
-                      <p className="font-display text-2xl text-primary font-semibold">{s.tamano}</p>
-                    </div>
-                    <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-                      {s.codigo}
-                    </span>
+            <div className="md:hidden space-y-6">
+              {lines.map((line) => (
+                <div key={line.id}>
+                  <h3 className="text-xs font-semibold uppercase tracking-widest text-accent mb-3 px-1">
+                    {line.label}
+                  </h3>
+                  <div className="grid gap-3">
+                    {line.sizes.map((s) => (
+                      <div
+                        key={s.talla}
+                        className="bg-card rounded-xl shadow-card border border-border/20 p-4"
+                      >
+                        <div className="flex items-center justify-between mb-3 pb-3 border-b border-border/20">
+                          <p className="font-display text-lg text-primary font-semibold">{s.talla}</p>
+                          {s.std && (
+                            <span className="text-xs font-semibold bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
+                              Estándar
+                            </span>
+                          )}
+                        </div>
+                        <dl className="grid grid-cols-2 gap-2 text-sm">
+                          <div>
+                            <dt className="text-muted-foreground text-xs">Medidas</dt>
+                            <dd className="font-mono text-foreground">{s.medidas}</dd>
+                          </div>
+                          <div>
+                            <dt className="text-muted-foreground text-xs">Gramaje base</dt>
+                            <dd className="text-foreground">{s.gramaje}</dd>
+                          </div>
+                          <div className="col-span-2">
+                            <dt className="text-muted-foreground text-xs">Uso</dt>
+                            <dd className="text-foreground">{s.uso}</dd>
+                          </div>
+                        </dl>
+                      </div>
+                    ))}
                   </div>
-                  <dl className="grid grid-cols-2 gap-3 text-sm">
-                    <div>
-                      <dt className="text-muted-foreground">Ancho</dt>
-                      <dd className="text-foreground font-medium">{s.ancho} cm</dd>
-                    </div>
-                    <div>
-                      <dt className="text-muted-foreground">Largo</dt>
-                      <dd className="text-foreground font-medium">{s.largo} cm</dd>
-                    </div>
-                    <div>
-                      <dt className="text-muted-foreground">Fuelle</dt>
-                      <dd className="text-foreground font-medium">{s.fuelle} cm</dd>
-                    </div>
-                    <div>
-                      <dt className="text-muted-foreground">Bolsas / bulto</dt>
-                      <dd className="text-foreground font-medium">{s.bolsas}</dd>
-                    </div>
-                    <div className="col-span-2">
-                      <dt className="text-muted-foreground">Kilos por bulto</dt>
-                      <dd className="text-foreground font-medium">{s.kilos} kg</dd>
-                    </div>
-                  </dl>
                 </div>
               ))}
             </div>
 
-            <div className="text-center mt-12">
-              <a
-                href={waLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 text-lg"
-              >
-                Escríbenos para cotizar
-              </a>
+            {/* Gramaje note */}
+            <div className="mt-6 rounded-xl border border-blue-200 bg-blue-50 px-5 py-4 text-sm text-blue-800 leading-relaxed">
+              <span className="font-semibold">Gramajes disponibles:</span> 60 a 160 g/m². El gramaje
+              base es el recomendado para uso regular y puede ajustarse según el peso del contenido
+              o preferencia del cliente. Todos los gramajes son compatibles con impresión a 2 tintas.
             </div>
           </div>
         </section>
+
+        {/* ── MEDIDAS ESPECIALES ── */}
+        <section className="py-16 md:py-20 bg-gradient-sage">
+          <div className="container mx-auto px-6 max-w-4xl">
+            <div className="bg-card rounded-2xl shadow-card border border-border/20 p-8 md:p-10">
+              <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-3">
+                Fabricación a la medida
+              </span>
+              <h2 className="font-display text-2xl md:text-3xl text-foreground mb-3">
+                ¿Tu producto no cabe en ninguna medida estándar?
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Fabricamos bolsas kraft a la medida dentro de los siguientes rangos.
+                El pedido mínimo varía según la medida y el gramaje — contáctanos para una cotización.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                {[
+                  { label: "Ancho",   value: "12 a 22 cm" },
+                  { label: "Alto",    value: "22.5 a 47 cm" },
+                  { label: "Fuelle",  value: "6 a 18 cm" },
+                  { label: "Gramaje", value: "60 a 160 g/m²" },
+                ].map((r) => (
+                  <div key={r.label} className="rounded-xl bg-secondary/40 border border-border/30 p-4 text-center">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">{r.label}</p>
+                    <p className="font-display text-base font-semibold text-primary">{r.value}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground">
+                Las medidas especiales están sujetas a cantidad mínima de producción.
+                Escríbenos con las medidas, gramaje deseado y volumen estimado para
+                recibir una cotización en menos de 24 horas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── CTA DUAL ── */}
+        <section className="py-16 md:py-24 bg-background">
+          <div className="container mx-auto px-6 max-w-5xl">
+            <div className="grid md:grid-cols-[1fr_auto_1fr] gap-0 md:gap-6 items-center bg-card rounded-2xl shadow-card border border-border/20 overflow-hidden">
+
+              {/* Cliente nuevo */}
+              <div className="p-8 md:p-10 text-center flex flex-col items-center">
+                <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">
+                  ¿Primera vez que compras bolsas al mayoreo?
+                </p>
+                <h3 className="font-display text-2xl text-foreground mb-3">
+                  Te ayudamos a elegir
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
+                  Cuéntanos de tu negocio y el tamaño aproximado que necesitas — nosotros
+                  te recomendamos la línea, talla y gramaje ideal.
+                </p>
+                <a
+                  href={waNew}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#25D366] text-white font-semibold rounded-full hover:bg-[#1ebe5d] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
+                >
+                  <IconWA />
+                  Escribir por WhatsApp
+                </a>
+                <p className="text-xs text-muted-foreground mt-3">
+                  Respondemos en menos de 24 h · <strong>55 4592 5827</strong>
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="hidden md:flex flex-col items-center gap-3 text-muted-foreground text-xs py-8">
+                <div className="w-px h-16 bg-border" />
+                <span>o</span>
+                <div className="w-px h-16 bg-border" />
+              </div>
+              <div className="md:hidden flex items-center gap-3 text-muted-foreground text-xs px-8">
+                <div className="h-px flex-1 bg-border" />
+                <span>o</span>
+                <div className="h-px flex-1 bg-border" />
+              </div>
+
+              {/* Comprador corporativo */}
+              <div className="p-8 md:p-10 text-center flex flex-col items-center">
+                <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">
+                  ¿Comprador corporativo o tienda departamental?
+                </p>
+                <h3 className="font-display text-2xl text-foreground mb-3">
+                  Envíanos tu especificación
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
+                  Si ya conoces la medida, gramaje y volumen que necesitas, te enviamos
+                  propuesta formal por el canal que prefieras.
+                </p>
+                <a
+                  href={EMAIL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-foreground text-background font-semibold rounded-full hover:bg-foreground/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm mb-3"
+                >
+                  <IconMail />
+                  Solicitar cotización por correo
+                </a>
+                <p className="text-xs text-muted-foreground mb-3">
+                  labolsadetumarca@gmail.com
+                </p>
+                <span className="text-xs text-muted-foreground mb-2">o</span>
+                <a
+                  href={waB2B}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-foreground text-background font-semibold rounded-full hover:bg-foreground/90 transition-all duration-300 border-2 border-[#25D366] shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
+                >
+                  <IconWA />
+                  Cotizar por WhatsApp
+                </a>
+                <p className="text-xs text-muted-foreground mt-3">
+                  <strong>55 4592 5827</strong>
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
       </main>
 
       <Footer />

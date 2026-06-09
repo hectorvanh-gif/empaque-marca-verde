@@ -1,5 +1,6 @@
 const WhatsAppButton = () => {
-  const whatsappLink = "https://wa.me/5215545925827?text=Hola,%20me%20interesa%20cotizar%20bolsas%20de%20papel%20personalizadas";
+  const whatsappLink =
+    "https://wa.me/525545925827?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20bolsas%20de%20papel%20kraft";
 
   return (
     <a

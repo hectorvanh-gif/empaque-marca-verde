@@ -1,158 +1,102 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import NavLink from "./NavLink";
 import logo from "@/assets/logo.png";
 
+const WA_NEW = "https://wa.me/525545925827?text=Hola%2C%20quiero%20cotizar%20bolsas%20de%20papel%20kraft.%20Mi%20negocio%20es%20%5Btipo%20de%20negocio%20o%20producto%20que%20vendo%5D%2C%20la%20bolsa%20que%20necesito%20es%20de%20aproximadamente%20%5Bancho%20%C3%97%20alto%5D%20cm%20y%20calculo%20unas%20%5Bcantidad%5D%20piezas.%20%C2%BFMe%20pueden%20ayudar%20a%20elegir%20el%20gramaje%3F";
+
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { label: "Inicio", href: "#inicio" },
-    { label: "Productos", href: "#productos" },
-    { label: "Proceso", href: "#proceso" },
-    { label: "Contacto", href: "#contacto" },
+  const navLinks = [
+    { label: "Inicio", href: isHome ? "#inicio" : "/" },
+    { label: "Catálogo", href: "/bolsas-catalogo" },
+    { label: "Nosotros", href: isHome ? "#nosotros" : "/#nosotros" },
+    { label: "Contacto", href: isHome ? "#contacto" : "/#contacto" },
   ];
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg py-2"
-          : "bg-black/20 backdrop-blur-sm py-4"
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-background/95 backdrop-blur-md shadow-soft" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6">
-        <nav className="flex items-center justify-between">
-          {/* Logo con efecto hover */}
-          <a 
-            href={isHome ? "#inicio" : "/#inicio"}
-            className="group flex items-center gap-4 transition-transform duration-300 hover:scale-105"
-          >
-            <div className="relative">
-              {/* Glow effect behind logo */}
-              <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <img 
-                src={logo} 
-                alt="La Bolsa de Tu Marca - Bolsas de papel personalizadas" 
-                className={`relative z-10 w-auto transition-all duration-500 ${
-                  isScrolled ? "h-14" : "h-20 lg:h-28"
-                }`}
-              />
-            </div>
-            {/* Tagline que aparece en hover */}
-            <div className="hidden lg:flex flex-col opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-10px] group-hover:translate-x-0">
-              <span className={`text-xs font-medium tracking-widest uppercase ${isScrolled ? "text-primary" : "text-white"}`}>
-                Fabricantes
-              </span>
-              <span className={`text-sm ${isScrolled ? "text-muted-foreground" : "text-white/80"}`}>
-                Bolsas de papel kraft
-              </span>
-            </div>
-          </a>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <img
+              src={logo}
+              alt="BolsasMX"
+              className="h-10 md:h-12 w-auto"
+            />
+          </Link>
 
-          {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={isHome ? item.href : `/${item.href}`}
-                  className={`relative px-5 py-2.5 text-sm font-medium transition-colors duration-300 group ${isScrolled ? "text-foreground/70 hover:text-primary" : "text-white/90 hover:text-white"}`}
-                >
-                  <span className="relative z-10">{item.label}</span>
-                  <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-3/4 group-hover:left-[12.5%]" />
-                </a>
-              </li>
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <NavLink key={link.label} href={link.href}>
+                {link.label}
+              </NavLink>
             ))}
-          </ul>
+          </nav>
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Link
-              to="/bolsas-catalogo"
-              className="inline-flex items-center gap-2 px-7 py-3 bg-accent text-accent-foreground text-sm font-bold rounded-full hover:bg-accent/85 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5 ring-2 ring-accent/30 animate-pulse-subtle"
-            >
-              📦 Catálogo
-            </Link>
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center gap-3">
             <a
-              href={isHome ? "#contacto" : "/#contacto"}
-              className="inline-flex items-center gap-2 px-7 py-3 bg-primary text-primary-foreground text-sm font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 group"
+              href={WA_NEW}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-soft hover:shadow-elevated text-sm"
             >
               <span>Cotiza Ahora</span>
-              <svg 
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile menu button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`lg:hidden p-3 rounded-full transition-colors ${isScrolled ? "text-foreground hover:bg-secondary/50" : "text-white hover:bg-white/20"}`}
+            className="md:hidden p-2 text-foreground"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {isMobileMenuOpen
+                ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              }
+            </svg>
           </button>
-        </nav>
-
-        {/* Mobile Menu con animación mejorada */}
-        <div 
-          className={`lg:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-lg border-b border-secondary/30 shadow-2xl transition-all duration-300 overflow-hidden ${
-            isMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          <ul className="flex flex-col py-6 px-6 space-y-2">
-            {navItems.map((item, index) => (
-              <li 
-                key={item.href}
-                style={{ transitionDelay: `${index * 50}ms` }}
-                className={`transition-all duration-300 ${isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}`}
-              >
-                <a
-                  href={isHome ? item.href : `/${item.href}`}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block px-4 py-3 text-lg font-medium text-foreground/80 hover:text-primary hover:bg-secondary/30 rounded-xl transition-all duration-200"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-            <li className="pt-4 flex flex-col gap-3">
-              <Link
-                to="/bolsas-catalogo"
-                onClick={() => setIsMenuOpen(false)}
-                className="flex items-center justify-center gap-2 px-6 py-4 bg-accent text-accent-foreground font-bold rounded-full shadow-lg text-lg"
-              >
-                📦 Catálogo
-              </Link>
-              <a
-                href={isHome ? "#contacto" : "/#contacto"}
-                onClick={() => setIsMenuOpen(false)}
-                className="flex items-center justify-center gap-2 px-6 py-4 bg-primary text-primary-foreground font-semibold rounded-full shadow-lg"
-              >
-                <span>Cotiza Ahora</span>
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </li>
-          </ul>
         </div>
+
+        {/* Mobile menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden py-4 border-t border-border/20 bg-background/95 backdrop-blur-md">
+            <nav className="flex flex-col gap-4 px-2 mb-4">
+              {navLinks.map((link) => (
+                <NavLink key={link.label} href={link.href} onClick={() => setIsMobileMenuOpen(false)}>
+                  {link.label}
+                </NavLink>
+              ))}
+            </nav>
+            <a
+              href={WA_NEW}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 mx-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 text-sm"
+            >
+              <span>Cotiza Ahora</span>
+            </a>
+          </div>
+        )}
       </div>
     </header>
   );
