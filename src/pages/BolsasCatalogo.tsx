@@ -5,16 +5,10 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 import catKraftReciclado from "@/assets/catalog/cat-kraft-reciclado.jpg";
-import catPapelModernas from "@/assets/catalog/cat-papel-modernas.jpg";
-import catKraftEuropeo from "@/assets/catalog/cat-kraft-europeo.jpg";
-import catKraftImpresion from "@/assets/catalog/cat-kraft-impresion.jpg";
 import catToteBags from "@/assets/catalog/cat-tote-bags.jpg";
 
 const categories = [
   { title: "Bolsas de Papel Kraft Reciclado", image: catKraftReciclado, to: "/bolsas-kraft-reciclado" },
-  { title: "Bolsas de Papel para Retail", image: catPapelModernas },
-  { title: "Bolsas Kraft Estilo Europeo", image: catKraftEuropeo },
-  { title: "Bolsas de Papel Kraft con Impresión", image: catKraftImpresion },
   { title: "Tote Bags", image: catToteBags },
 ];
 
