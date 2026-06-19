@@ -42,7 +42,7 @@ const Urgency = () => {
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight drop-shadow-lg">
             ¿Te Urgen<br />
             <span className="relative">
-              Tus Bolsas?
+              tus Bolsas de Papel?
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
                 <path d="M2 10C50 4 100 2 150 6C200 10 250 4 298 8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-white/50"/>
               </svg>

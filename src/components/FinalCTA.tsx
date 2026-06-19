@@ -23,7 +23,7 @@ const FinalCTA = () => {
 
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary-foreground leading-tight">
-              Convierte cada bolsa en un anuncio de tu marca
+              Convierte cada bolsa de papel en un anuncio de tu marca
             </h2>
           </div>
 

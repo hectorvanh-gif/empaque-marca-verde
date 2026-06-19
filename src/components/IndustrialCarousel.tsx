@@ -34,9 +34,9 @@ const IndustrialCarousel = () => {
   return (
     <section className="py-8 md:py-16 bg-secondary/20">
       <div className="container mx-auto px-4 mb-8">
-        <p className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-primary uppercase tracking-wide">
-          Fabricantes, no revendedores
-        </p>
+        <h2 className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-primary uppercase tracking-wide">
+          Fabricantes de Bolsas de Papel, no Revendedores
+        </h2>
       </div>
       
       <Carousel

@@ -27,6 +27,11 @@ const WhyBags = () => {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground">
+            ¿Por Qué Elegir Nuestras Bolsas de Papel?
+          </h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {features.map((feature, index) => (
             <div key={index} className="flex flex-col items-center text-center p-6">

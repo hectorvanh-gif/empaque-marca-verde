@@ -19,6 +19,11 @@ const slides = [
 const DetailCarousel = () => {
   return (
     <section className="py-8 md:py-16 bg-background">
+      <div className="container mx-auto px-4 mb-6 md:mb-8 text-center">
+        <h2 className="font-display text-xl md:text-2xl lg:text-3xl text-foreground">
+          El Detalle que Distingue tus Bolsas de Papel
+        </h2>
+      </div>
       <Carousel
         opts={{
           align: "start",
