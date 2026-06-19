@@ -87,7 +87,7 @@ const Header = () => {
           <div className="md:hidden flex items-center gap-2">
             <LanguageToggle className={isScrolled ? "border-border text-foreground/80" : "border-white/40 text-white"} />
             <button
-              className="p-2 text-foreground"
+              className={`p-2 ${isScrolled ? "text-foreground" : "text-white"}`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -106,7 +106,12 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-border/20 bg-background/95 backdrop-blur-md">
             <nav className="flex flex-col gap-4 px-2 mb-4">
               {navLinks.map((link) => (
-                <NavLink key={link.label} to={link.href} onClick={() => setIsMobileMenuOpen(false)}>
+                <NavLink
+                  key={link.label}
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-foreground font-medium px-2 py-1"
+                >
                   {link.label}
                 </NavLink>
               ))}
