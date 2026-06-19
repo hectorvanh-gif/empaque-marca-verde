@@ -10,7 +10,7 @@ const HeroMinimal = () => {
         loop
         muted
         playsInline
-        preload="none"
+        preload="metadata"
         poster={heroPoster}
         className="absolute inset-0 w-full h-full object-cover"
       >
