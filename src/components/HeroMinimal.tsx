@@ -1,3 +1,5 @@
+import heroPoster from "@/assets/carousel/industrial-1.jpg";
+
 const HeroMinimal = () => {
   return (
     <section id="inicio" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
@@ -8,6 +10,8 @@ const HeroMinimal = () => {
         loop
         muted
         playsInline
+        preload="none"
+        poster={heroPoster}
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="https://videos.pexels.com/video-files/18694869/18694869-hd_1920_1080_24fps.mp4" type="video/mp4" />
