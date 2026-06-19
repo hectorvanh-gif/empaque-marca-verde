@@ -38,6 +38,11 @@ const slides = [
 const ProductCarousel = () => {
   return (
     <section className="py-8 md:py-16 bg-background">
+      <div className="container mx-auto px-4 mb-6 md:mb-8 text-center">
+        <h2 className="font-display text-xl md:text-2xl lg:text-3xl text-foreground">
+          Bolsas de Papel para Cada Tipo de Negocio
+        </h2>
+      </div>
       <Carousel
         opts={{
           align: "start",
