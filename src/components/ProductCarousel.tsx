@@ -58,6 +58,7 @@ const ProductCarousel = () => {
                   src={slide.image}
                   alt={slide.text}
                   className="w-full h-full object-cover"
+                  loading={index === 0 ? "eager" : "lazy"}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 md:bottom-10 left-6 md:left-10 right-6 md:right-10">

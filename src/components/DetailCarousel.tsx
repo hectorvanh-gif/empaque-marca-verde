@@ -38,6 +38,7 @@ const DetailCarousel = () => {
                 <img
                   src={slide.image}
                   alt={slide.alt}
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
