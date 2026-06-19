@@ -1,3 +1,5 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const WA_NEW = "https://wa.me/525545925827?text=Hola%2C%20quiero%20cotizar%20bolsas%20de%20papel%20kraft.%20Mi%20negocio%20es%20%5Btipo%20de%20negocio%20o%20producto%20que%20vendo%5D%2C%20la%20bolsa%20que%20necesito%20es%20de%20aproximadamente%20%5Bancho%20%C3%97%20alto%5D%20cm%20y%20calculo%20unas%20%5Bcantidad%5D%20piezas.%20%C2%BFMe%20pueden%20ayudar%20a%20elegir%20el%20gramaje%3F";
 const WA_B2B = "https://wa.me/525545925827?text=Hola%2C%20soy%20comprador%20de%20%5Bempresa%5D.%20Requiero%20cotizaci%C3%B3n%20de%20%5Bmedida%20y%20gramaje%5D%2C%20volumen%20estimado%20%5Bcantidad%5D.%20%C2%BFPueden%20enviarme%20propuesta%3F";
 const EMAIL  = "mailto:labolsadetumarca@gmail.com?subject=Cotizaci%C3%B3n%20bolsas%20kraft%20%E2%80%94%20compra%20corporativa&body=Hola%2C%0A%0ASoy%20comprador%20de%20%5Bempresa%5D.%20Requiero%20cotizaci%C3%B3n%20de%20%5Bl%C3%ADnea%2C%20medida%20y%20gramaje%5D%2C%20volumen%20estimado%20%5Bcantidad%5D.%0A%0A%C2%BFPueden%20enviarme%20propuesta%3F%0A%0AGracias.";
@@ -16,6 +18,8 @@ const IconMail = () => (
 );
 
 const FinalCTA = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 md:py-32 bg-primary">
       <div className="container mx-auto px-4">
@@ -23,7 +27,7 @@ const FinalCTA = () => {
 
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary-foreground leading-tight">
-              Convierte cada bolsa de papel en un anuncio de tu marca
+              {t.finalCta.heading}
             </h2>
           </div>
 
@@ -32,14 +36,13 @@ const FinalCTA = () => {
             {/* Minorista / cliente nuevo */}
             <div className="bg-primary-foreground/10 rounded-2xl p-8 text-center flex flex-col items-center border border-primary-foreground/20">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/60 mb-2">
-                ¿Primera vez que compras bolsas al mayoreo?
+                {t.finalCta.card1.eyebrow}
               </p>
               <h3 className="font-display text-2xl text-primary-foreground mb-3">
-                Te ayudamos a elegir
+                {t.finalCta.card1.title}
               </h3>
               <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6 max-w-xs">
-                Cuéntanos de tu negocio y el tamaño aproximado — nosotros te recomendamos
-                la línea, talla y gramaje ideal.
+                {t.finalCta.card1.desc}
               </p>
               <a
                 href={WA_NEW}
@@ -48,36 +51,35 @@ const FinalCTA = () => {
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#25D366] text-white font-semibold rounded-full hover:bg-[#1ebe5d] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
               >
                 <IconWA />
-                Cotiza Ahora
+                {t.finalCta.card1.cta}
               </a>
               <p className="text-xs text-primary-foreground/50 mt-3">
-                Respondemos en menos de 24 h · <strong className="text-primary-foreground/70">55 4592 5827</strong>
+                {t.finalCta.card1.note} <strong className="text-primary-foreground/70">55 4592 5827</strong>
               </p>
             </div>
 
             {/* Divider */}
             <div className="hidden md:flex flex-col items-center gap-3 text-primary-foreground/30 text-xs px-6">
               <div className="w-px h-16 bg-primary-foreground/20" />
-              <span>o</span>
+              <span>{t.finalCta.card2.or}</span>
               <div className="w-px h-16 bg-primary-foreground/20" />
             </div>
             <div className="md:hidden flex items-center gap-3 text-primary-foreground/30 text-xs my-4">
               <div className="h-px flex-1 bg-primary-foreground/20" />
-              <span>o</span>
+              <span>{t.finalCta.card2.or}</span>
               <div className="h-px flex-1 bg-primary-foreground/20" />
             </div>
 
             {/* Corporativo */}
             <div className="bg-primary-foreground/10 rounded-2xl p-8 text-center flex flex-col items-center border border-primary-foreground/20">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/60 mb-2">
-                ¿Comprador corporativo o tienda departamental?
+                {t.finalCta.card2.eyebrow}
               </p>
               <h3 className="font-display text-2xl text-primary-foreground mb-3">
-                Envíanos tu especificación
+                {t.finalCta.card2.title}
               </h3>
               <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6 max-w-xs">
-                Si ya conoces la medida, gramaje y volumen, te enviamos propuesta formal
-                por el canal que prefieras.
+                {t.finalCta.card2.desc}
               </p>
               <a
                 href={EMAIL}
@@ -86,12 +88,12 @@ const FinalCTA = () => {
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary-foreground text-primary font-semibold rounded-full hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm mb-3"
               >
                 <IconMail />
-                Solicitar cotización por correo
+                {t.finalCta.card2.ctaEmail}
               </a>
               <p className="text-xs text-primary-foreground/50 mb-3">
                 labolsadetumarca@gmail.com
               </p>
-              <span className="text-xs text-primary-foreground/30 mb-3">o</span>
+              <span className="text-xs text-primary-foreground/30 mb-3">{t.finalCta.card2.or}</span>
               <a
                 href={WA_B2B}
                 target="_blank"
@@ -99,7 +101,7 @@ const FinalCTA = () => {
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-transparent text-primary-foreground font-semibold rounded-full border-2 border-[#25D366] hover:bg-[#25D366]/10 transition-all duration-300 hover:-translate-y-0.5 text-sm"
               >
                 <IconWA />
-                Cotiza Ahora
+                {t.finalCta.card2.ctaWa}
               </a>
               <p className="text-xs text-primary-foreground/50 mt-3">
                 <strong className="text-primary-foreground/70">55 4592 5827</strong>

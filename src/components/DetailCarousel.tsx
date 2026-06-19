@@ -4,24 +4,23 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
+import { useLanguage } from "@/contexts/LanguageContext";
 import detail1 from "@/assets/carousel/detail-1.jpg";
 import detail2 from "@/assets/carousel/detail-2.jpg";
 import detail3 from "@/assets/carousel/detail-3.jpg";
 import detail4 from "@/assets/carousel/detail-4.jpg";
 
-const slides = [
-  { image: detail1, alt: "Impresión personalizada en papel kraft" },
-  { image: detail2, alt: "Detalle de asa trenzada" },
-  { image: detail3, alt: "Textura de papel kraft natural" },
-  { image: detail4, alt: "Bolsas premium en uso" },
-];
+const images = [detail1, detail2, detail3, detail4];
 
 const DetailCarousel = () => {
+  const { t } = useLanguage();
+  const slides = images.map((image, i) => ({ image, alt: t.detailCarousel.alts[i] }));
+
   return (
     <section className="py-8 md:py-16 bg-background">
       <div className="container mx-auto px-4 mb-6 md:mb-8 text-center">
         <h2 className="font-display text-xl md:text-2xl lg:text-3xl text-foreground">
-          El Detalle que Distingue tus Bolsas de Papel
+          {t.detailCarousel.heading}
         </h2>
       </div>
       <Carousel

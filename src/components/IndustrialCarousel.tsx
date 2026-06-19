@@ -6,36 +6,23 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import { useLanguage } from "@/contexts/LanguageContext";
 import industrial1 from "@/assets/carousel/industrial-1.jpg";
 import industrial2 from "@/assets/carousel/industrial-2.jpg";
 import industrial3 from "@/assets/carousel/industrial-3.jpg";
 import industrial4 from "@/assets/carousel/industrial-4.jpg";
 
-const slides = [
-  {
-    image: industrial1,
-    text: "Producción industrial",
-  },
-  {
-    image: industrial2,
-    text: "Calidad a escala",
-  },
-  {
-    image: industrial3,
-    text: "Impresión de precisión",
-  },
-  {
-    image: industrial4,
-    text: "Papel kraft de alto estándar",
-  },
-];
+const images = [industrial1, industrial2, industrial3, industrial4];
 
 const IndustrialCarousel = () => {
+  const { t } = useLanguage();
+  const slides = images.map((image, i) => ({ image, text: t.industrialCarousel.slides[i] }));
+
   return (
     <section className="py-8 md:py-16 bg-secondary/20">
       <div className="container mx-auto px-4 mb-8">
         <h2 className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-primary uppercase tracking-wide">
-          Fabricantes de Bolsas de Papel, no Revendedores
+          {t.industrialCarousel.heading}
         </h2>
       </div>
       

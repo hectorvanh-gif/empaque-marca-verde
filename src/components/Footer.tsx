@@ -1,8 +1,17 @@
 import { Leaf } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
+  const navLinks = [
+    { label: t.footer.navLinks.inicio, href: "#inicio" },
+    { label: t.footer.navLinks.nosotros, href: "#nosotros" },
+    { label: t.footer.navLinks.productos, href: "#productos" },
+    { label: t.footer.navLinks.beneficios, href: "#beneficios" },
+    { label: t.footer.navLinks.proceso, href: "#proceso" },
+    { label: t.footer.navLinks.contacto, href: "#contacto" },
+  ];
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -16,23 +25,15 @@ const Footer = () => {
               className="h-16 w-auto mb-4"
             />
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              Fabricamos bolsas de papel personalizadas y ecológicas en México. 
-              Tu publicidad en cada venta.
+              {t.footer.description}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display text-lg mb-4">Navegación</h4>
+            <h4 className="font-display text-lg mb-4">{t.footer.navTitle}</h4>
             <ul className="space-y-2">
-              {[
-                { label: "Inicio", href: "#inicio" },
-                { label: "Nosotros", href: "#nosotros" },
-                { label: "Productos", href: "#productos" },
-                { label: "Beneficios", href: "#beneficios" },
-                { label: "Proceso", href: "#proceso" },
-                { label: "Contacto", href: "#contacto" },
-              ].map((link) => (
+              {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
@@ -47,10 +48,10 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display text-lg mb-4">Contacto</h4>
+            <h4 className="font-display text-lg mb-4">{t.footer.contactTitle}</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
               <li>
-                <a 
+                <a
                   href="mailto:labolsadetumarca@gmail.com"
                   className="hover:text-primary-foreground transition-colors"
                 >
@@ -58,7 +59,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
+                <a
                   href="https://wa.me/525545925827"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -67,7 +68,7 @@ const Footer = () => {
                   +52 1 55 4592 5827
                 </a>
               </li>
-              <li>Ciudad de México, México</li>
+              <li>{t.footer.location}</li>
             </ul>
 
             {/* Social */}
@@ -102,11 +103,11 @@ const Footer = () => {
         <div className="pt-8 border-t border-primary-foreground/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © 2020 La Bolsa de Tu Marca. Todos los derechos reservados.
+              {t.footer.copyright}
             </p>
             <div className="flex items-center gap-2 text-primary-foreground/60 text-sm">
               <Leaf className="w-4 h-4" />
-              <span>Comprometidos con el medio ambiente</span>
+              <span>{t.footer.eco}</span>
             </div>
           </div>
         </div>

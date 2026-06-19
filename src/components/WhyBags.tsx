@@ -1,35 +1,18 @@
 import { Factory, Leaf, Paintbrush, Store } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const features = [
-  {
-    icon: Factory,
-    title: "Fabricación propia",
-    description: "Controlamos todo el proceso para garantizar calidad, consistencia y entregas a tiempo.",
-  },
-  {
-    icon: Leaf,
-    title: "Papel ecológico",
-    description: "Empaques responsables que refuerzan el valor y la conciencia de tu marca.",
-  },
-  {
-    icon: Paintbrush,
-    title: "Personalización total",
-    description: "Cada bolsa se adapta a tu diseño, tu producto y tu forma de vender.",
-  },
-  {
-    icon: Store,
-    title: "Pensadas para marcas y retail",
-    description: "Ideales para tiendas, franquicias y negocios que cuidan su imagen.",
-  },
-];
+const icons = [Factory, Leaf, Paintbrush, Store];
 
 const WhyBags = () => {
+  const { t } = useLanguage();
+  const features = t.whyBags.features.map((feature, i) => ({ ...feature, icon: icons[i] }));
+
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground">
-            ¿Por Qué Elegir Nuestras Bolsas de Papel?
+            {t.whyBags.heading}
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">

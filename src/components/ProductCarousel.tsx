@@ -6,41 +6,24 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import { useLanguage } from "@/contexts/LanguageContext";
 import product1 from "@/assets/carousel/product-1.jpg";
 import product2 from "@/assets/carousel/product-2.jpg";
 import product3 from "@/assets/carousel/product-3.jpg";
 import product4 from "@/assets/carousel/product-4.jpg";
 import product5 from "@/assets/carousel/product-5.jpg";
 
-const slides = [
-  {
-    image: product1,
-    text: "Bolsas que venden tu marca",
-  },
-  {
-    image: product2,
-    text: "Delivery con tu marca",
-  },
-  {
-    image: product3,
-    text: "Bolsas para retail",
-  },
-  {
-    image: product4,
-    text: "Diseño que impacta",
-  },
-  {
-    image: product5,
-    text: "Bolsas de tela personalizadas",
-  },
-];
+const images = [product1, product2, product3, product4, product5];
 
 const ProductCarousel = () => {
+  const { t } = useLanguage();
+  const slides = images.map((image, i) => ({ image, text: t.productCarousel.slides[i] }));
+
   return (
     <section className="py-8 md:py-16 bg-background">
       <div className="container mx-auto px-4 mb-6 md:mb-8 text-center">
         <h2 className="font-display text-xl md:text-2xl lg:text-3xl text-foreground">
-          Bolsas de Papel para Cada Tipo de Negocio
+          {t.productCarousel.heading}
         </h2>
       </div>
       <Carousel

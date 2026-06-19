@@ -2,43 +2,30 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { useLanguage } from "@/contexts/LanguageContext";
 import catKraftReciclado from "@/assets/catalog/cat-kraft-reciclado.jpg";
 
-// ── Datos del catálogo ──────────────────────────────────────────────────────
-const lines = [
+// ── Medidas y gramajes (universales, no requieren traducción) ──────────────
+const measurements = [
   {
     id: "asa",
-    label: "Bolsas con Asa",
     sizes: [
-      { talla: "Chica",   medidas: "14.5 × 21.5 × 7.5", gramaje: "70–80 g/m²",    uso: "Joyería, cosméticos, accesorios pequeños" },
-      { talla: "Mediana", medidas: "19 × 26.5 × 8",      gramaje: "80–90 g/m²",    uso: "Ropa ligera, calzado chico, farmacia",     std: true },
-      { talla: "Grande",  medidas: "30 × 39 × 18",       gramaje: "100–120 g/m²",  uso: "Retail general, calzado adulto, ropa" },
-      { talla: "Jumbo",   medidas: "33 × 47 × 12",       gramaje: "110–130 g/m²",  uso: "Boutique, artículos voluminosos, prendas" },
+      { medidas: "14.5 × 21.5 × 7.5", gramaje: "70–80 g/m²" },
+      { medidas: "19 × 26.5 × 8", gramaje: "80–90 g/m²", std: true },
+      { medidas: "30 × 39 × 18", gramaje: "100–120 g/m²" },
+      { medidas: "33 × 47 × 12", gramaje: "110–130 g/m²" },
     ],
   },
-  {
-    id: "delivery",
-    label: "Delivery",
-    sizes: [
-      { talla: "Única",   medidas: "30 × 40 × 18",       gramaje: "90–100 g/m²",   uso: "Restaurantes, food delivery, alimentos preparados" },
-    ],
-  },
+  { id: "delivery", sizes: [{ medidas: "30 × 40 × 18", gramaje: "90–100 g/m²" }] },
   {
     id: "boutique",
-    label: "Boutique (sin asa)",
     sizes: [
-      { talla: "Chica",   medidas: "20.5 × 14 × 9",      gramaje: "60–70 g/m²",    uso: "Joyería, perfumería, detalle" },
-      { talla: "Mediana", medidas: "30 × 22 × 12",        gramaje: "80–90 g/m²",    uso: "Moda, cosmética, vinos",                  std: true },
-      { talla: "Grande",  medidas: "33 × 26 × 14.5",      gramaje: "90–100 g/m²",   uso: "Retail premium, ropa doblada" },
+      { medidas: "20.5 × 14 × 9", gramaje: "60–70 g/m²" },
+      { medidas: "30 × 22 × 12", gramaje: "80–90 g/m²", std: true },
+      { medidas: "33 × 26 × 14.5", gramaje: "90–100 g/m²" },
     ],
   },
-  {
-    id: "botella",
-    label: "Botella",
-    sizes: [
-      { talla: "Única",   medidas: "12 × 35 × 9",         gramaje: "100–120 g/m²",  uso: "Vinos, licores, aceites gourmet — mín. 100 g recomendado" },
-    ],
-  },
+  { id: "botella", sizes: [{ medidas: "12 × 35 × 9", gramaje: "100–120 g/m²" }] },
 ];
 
 const WA_BASE = "https://wa.me/525545925827";
@@ -73,6 +60,25 @@ const IconMail = () => (
 
 // ── Componente principal ────────────────────────────────────────────────────
 const BolsasKraftReciclado = () => {
+  const { t } = useLanguage();
+
+  const lines = measurements.map((m, lineIdx) => ({
+    id: m.id,
+    label: t.bolsasKraft.lines[lineIdx].label,
+    sizes: m.sizes.map((s, sizeIdx) => ({
+      ...s,
+      talla: t.bolsasKraft.lines[lineIdx].sizes[sizeIdx].talla,
+      uso: t.bolsasKraft.lines[lineIdx].sizes[sizeIdx].uso,
+    })),
+  }));
+
+  const ranges = [
+    { label: t.bolsasKraft.ranges.ancho, value: "12 a 22 cm" },
+    { label: t.bolsasKraft.ranges.alto, value: "22.5 a 47 cm" },
+    { label: t.bolsasKraft.ranges.fuelle, value: "6 a 18 cm" },
+    { label: t.bolsasKraft.ranges.gramaje, value: "60 a 160 g/m²" },
+  ];
+
   return (
     <>
       <Helmet>
@@ -93,23 +99,22 @@ const BolsasKraftReciclado = () => {
             <div className="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
               <div>
                 <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-3">
-                  Catálogo · Bolsas Kraft
+                  {t.bolsasKraft.eyebrow}
                 </span>
                 <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight mb-4">
-                  Bolsas de Papel{" "}
-                  <span className="text-primary">Kraft Reciclado</span>
+                  {t.bolsasKraft.title1}{" "}
+                  <span className="text-primary">{t.bolsasKraft.titleHighlight}</span>
                 </h1>
                 <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                  Fabricadas en México con papel kraft 100% reciclado. Cuatro líneas
-                  para retail, delivery, boutique y vinos — con o sin impresión de tu marca.
+                  {t.bolsasKraft.desc}
                 </p>
                 {/* Badges */}
                 <div className="flex flex-wrap gap-2 mb-8">
                   <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border bg-green-50 text-green-800 border-green-200">
-                    <IconShield /> Certificación FSC
+                    <IconShield /> {t.bolsasKraft.badge1}
                   </span>
                   <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border bg-blue-50 text-blue-800 border-blue-200">
-                    <IconPrint /> Impresión a 2 tintas
+                    <IconPrint /> {t.bolsasKraft.badge2}
                   </span>
                 </div>
                 <a
@@ -119,7 +124,7 @@ const BolsasKraftReciclado = () => {
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 text-base"
                 >
                   <IconWA />
-                  Cotiza Ahora
+                  {t.bolsasKraft.cta}
                 </a>
               </div>
               <div className="aspect-square bg-card rounded-2xl shadow-card overflow-hidden p-6 flex items-center justify-center">
@@ -138,14 +143,13 @@ const BolsasKraftReciclado = () => {
           <div className="container mx-auto px-6 max-w-5xl">
             <div className="text-center mb-12">
               <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-3">
-                Medidas estándar
+                {t.bolsasKraft.sizesEyebrow}
               </span>
               <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3">
-                Tabla de tamaños
+                {t.bolsasKraft.sizesHeading}
               </h2>
               <p className="text-muted-foreground">
-                Todas las medidas en cm: Ancho × Alto × Fuelle. El gramaje base puede
-                ajustarse según el peso del contenido.
+                {t.bolsasKraft.sizesDesc}
               </p>
             </div>
 
@@ -154,11 +158,11 @@ const BolsasKraftReciclado = () => {
               <table className="w-full text-left">
                 <thead className="bg-primary text-primary-foreground">
                   <tr>
-                    <th className="px-5 py-4 font-display font-semibold">Línea</th>
-                    <th className="px-5 py-4 font-display font-semibold">Talla</th>
-                    <th className="px-5 py-4 font-display font-semibold">Medidas (cm)</th>
-                    <th className="px-5 py-4 font-display font-semibold">Gramaje base</th>
-                    <th className="px-5 py-4 font-display font-semibold">Uso recomendado</th>
+                    <th className="px-5 py-4 font-display font-semibold">{t.bolsasKraft.tableHeaders.linea}</th>
+                    <th className="px-5 py-4 font-display font-semibold">{t.bolsasKraft.tableHeaders.talla}</th>
+                    <th className="px-5 py-4 font-display font-semibold">{t.bolsasKraft.tableHeaders.medidas}</th>
+                    <th className="px-5 py-4 font-display font-semibold">{t.bolsasKraft.tableHeaders.gramaje}</th>
+                    <th className="px-5 py-4 font-display font-semibold">{t.bolsasKraft.tableHeaders.uso}</th>
                   </tr>
                 </thead>
                 <tbody className="bg-card">
@@ -182,7 +186,7 @@ const BolsasKraftReciclado = () => {
                           {s.gramaje}
                           {s.std && (
                             <span className="ml-2 text-xs font-semibold bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
-                              Estándar
+                              {t.bolsasKraft.standardTag}
                             </span>
                           )}
                         </td>
@@ -211,21 +215,21 @@ const BolsasKraftReciclado = () => {
                           <p className="font-display text-lg text-primary font-semibold">{s.talla}</p>
                           {s.std && (
                             <span className="text-xs font-semibold bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
-                              Estándar
+                              {t.bolsasKraft.standardTag}
                             </span>
                           )}
                         </div>
                         <dl className="grid grid-cols-2 gap-2 text-sm">
                           <div>
-                            <dt className="text-muted-foreground text-xs">Medidas</dt>
+                            <dt className="text-muted-foreground text-xs">{t.bolsasKraft.tableHeaders.medidas}</dt>
                             <dd className="font-mono text-foreground">{s.medidas}</dd>
                           </div>
                           <div>
-                            <dt className="text-muted-foreground text-xs">Gramaje base</dt>
+                            <dt className="text-muted-foreground text-xs">{t.bolsasKraft.tableHeaders.gramaje}</dt>
                             <dd className="text-foreground">{s.gramaje}</dd>
                           </div>
                           <div className="col-span-2">
-                            <dt className="text-muted-foreground text-xs">Uso</dt>
+                            <dt className="text-muted-foreground text-xs">{t.bolsasKraft.tableHeaders.uso}</dt>
                             <dd className="text-foreground">{s.uso}</dd>
                           </div>
                         </dl>
@@ -238,9 +242,7 @@ const BolsasKraftReciclado = () => {
 
             {/* Gramaje note */}
             <div className="mt-6 rounded-xl border border-blue-200 bg-blue-50 px-5 py-4 text-sm text-blue-800 leading-relaxed">
-              <span className="font-semibold">Gramajes disponibles:</span> 60 a 160 g/m². El gramaje
-              base es el recomendado para uso regular y puede ajustarse según el peso del contenido
-              o preferencia del cliente. Todos los gramajes son compatibles con impresión a 2 tintas.
+              {t.bolsasKraft.gramajeNote}
             </div>
           </div>
         </section>
@@ -250,22 +252,16 @@ const BolsasKraftReciclado = () => {
           <div className="container mx-auto px-6 max-w-4xl">
             <div className="bg-card rounded-2xl shadow-card border border-border/20 p-8 md:p-10">
               <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-3">
-                Fabricación a la medida
+                {t.bolsasKraft.customEyebrow}
               </span>
               <h2 className="font-display text-2xl md:text-3xl text-foreground mb-3">
-                ¿Tu producto no cabe en ninguna medida estándar?
+                {t.bolsasKraft.customHeading}
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Fabricamos bolsas kraft a la medida dentro de los siguientes rangos.
-                El pedido mínimo varía según la medida y el gramaje — contáctanos para una cotización.
+                {t.bolsasKraft.customDesc}
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                {[
-                  { label: "Ancho",   value: "12 a 22 cm" },
-                  { label: "Alto",    value: "22.5 a 47 cm" },
-                  { label: "Fuelle",  value: "6 a 18 cm" },
-                  { label: "Gramaje", value: "60 a 160 g/m²" },
-                ].map((r) => (
+                {ranges.map((r) => (
                   <div key={r.label} className="rounded-xl bg-secondary/40 border border-border/30 p-4 text-center">
                     <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">{r.label}</p>
                     <p className="font-display text-base font-semibold text-primary">{r.value}</p>
@@ -273,9 +269,7 @@ const BolsasKraftReciclado = () => {
                 ))}
               </div>
               <p className="text-xs text-muted-foreground">
-                Las medidas especiales están sujetas a cantidad mínima de producción.
-                Escríbenos con las medidas, gramaje deseado y volumen estimado para
-                recibir una cotización en menos de 24 horas.
+                {t.bolsasKraft.customNote}
               </p>
             </div>
           </div>
@@ -289,14 +283,13 @@ const BolsasKraftReciclado = () => {
               {/* Cliente nuevo */}
               <div className="p-8 md:p-10 text-center flex flex-col items-center">
                 <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">
-                  ¿Primera vez que compras bolsas al mayoreo?
+                  {t.finalCta.card1.eyebrow}
                 </p>
                 <h3 className="font-display text-2xl text-foreground mb-3">
-                  Te ayudamos a elegir
+                  {t.finalCta.card1.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
-                  Cuéntanos de tu negocio y el tamaño aproximado que necesitas — nosotros
-                  te recomendamos la línea, talla y gramaje ideal.
+                  {t.finalCta.card1.desc}
                 </p>
                 <a
                   href={waNew}
@@ -305,36 +298,35 @@ const BolsasKraftReciclado = () => {
                   className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#25D366] text-white font-semibold rounded-full hover:bg-[#1ebe5d] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
                 >
                   <IconWA />
-                  Cotiza Ahora
+                  {t.finalCta.card1.cta}
                 </a>
                 <p className="text-xs text-muted-foreground mt-3">
-                  Respondemos en menos de 24 h · <strong>55 4592 5827</strong>
+                  {t.finalCta.card1.note} <strong>55 4592 5827</strong>
                 </p>
               </div>
 
               {/* Divider */}
               <div className="hidden md:flex flex-col items-center gap-3 text-muted-foreground text-xs py-8">
                 <div className="w-px h-16 bg-border" />
-                <span>o</span>
+                <span>{t.finalCta.card2.or}</span>
                 <div className="w-px h-16 bg-border" />
               </div>
               <div className="md:hidden flex items-center gap-3 text-muted-foreground text-xs px-8">
                 <div className="h-px flex-1 bg-border" />
-                <span>o</span>
+                <span>{t.finalCta.card2.or}</span>
                 <div className="h-px flex-1 bg-border" />
               </div>
 
               {/* Comprador corporativo */}
               <div className="p-8 md:p-10 text-center flex flex-col items-center">
                 <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">
-                  ¿Comprador corporativo o tienda departamental?
+                  {t.finalCta.card2.eyebrow}
                 </p>
                 <h3 className="font-display text-2xl text-foreground mb-3">
-                  Envíanos tu especificación
+                  {t.finalCta.card2.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
-                  Si ya conoces la medida, gramaje y volumen que necesitas, te enviamos
-                  propuesta formal por el canal que prefieras.
+                  {t.finalCta.card2.desc}
                 </p>
                 <a
                   href={EMAIL}
@@ -343,12 +335,12 @@ const BolsasKraftReciclado = () => {
                   className="inline-flex items-center gap-2 px-7 py-3.5 bg-foreground text-background font-semibold rounded-full hover:bg-foreground/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm mb-3"
                 >
                   <IconMail />
-                  Solicitar cotización por correo
+                  {t.finalCta.card2.ctaEmail}
                 </a>
                 <p className="text-xs text-muted-foreground mb-3">
                   labolsadetumarca@gmail.com
                 </p>
-                <span className="text-xs text-muted-foreground mb-2">o</span>
+                <span className="text-xs text-muted-foreground mb-2">{t.finalCta.card2.or}</span>
                 <a
                   href={waB2B}
                   target="_blank"
@@ -356,7 +348,7 @@ const BolsasKraftReciclado = () => {
                   className="inline-flex items-center gap-2 px-7 py-3.5 bg-foreground text-background font-semibold rounded-full hover:bg-foreground/90 transition-all duration-300 border-2 border-[#25D366] shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
                 >
                   <IconWA />
-                  Cotiza Ahora
+                  {t.finalCta.card2.ctaWa}
                 </a>
                 <p className="text-xs text-muted-foreground mt-3">
                   <strong>55 4592 5827</strong>

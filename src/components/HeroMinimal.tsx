@@ -1,6 +1,9 @@
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroPoster from "@/assets/carousel/industrial-1.jpg";
 
 const HeroMinimal = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="inicio" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
 
@@ -25,8 +28,8 @@ const HeroMinimal = () => {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
 
           <h1 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white leading-snug mb-10 max-w-5xl tracking-tight drop-shadow-lg">
-            <span className="block">Diseñamos y fabricamos <span className="text-green-300">bolsas de papel y de tela</span> personalizadas</span>
-            <span className="block">para que tu marca <span className="font-semibold">venda más, destaque y se recuerde.</span></span>
+            <span className="block">{t.hero.title1} <span className="text-green-300">{t.hero.titleHighlight}</span> {t.hero.title1Suffix}</span>
+            <span className="block">{t.hero.title2} <span className="font-semibold">{t.hero.title2Bold}</span></span>
           </h1>
 
           <a
@@ -35,7 +38,7 @@ const HeroMinimal = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-white text-primary font-semibold rounded-full hover:bg-white/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 text-lg group"
           >
-            <span>Cotiza Ahora</span>
+            <span>{t.hero.cta}</span>
             <svg
               className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
               fill="none"

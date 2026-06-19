@@ -1,6 +1,8 @@
 import { Clock, MessageCircle, Zap, Truck } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Urgency = () => {
+  const { t } = useLanguage();
   const whatsappNumber = "5215545925827";
   const whatsappMessage = encodeURIComponent("¡Hola! Me urgen mis bolsas, ¿pueden ayudarme?");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
@@ -35,37 +37,36 @@ const Urgency = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/15 rounded-full border border-white/30 mb-6 backdrop-blur-sm">
             <Clock className="w-4 h-4 text-white" />
             <span className="text-white text-sm font-medium tracking-wide uppercase">
-              Fabricación Express
+              {t.urgency.badge}
             </span>
           </div>
-          
+
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight drop-shadow-lg">
-            ¿Te Urgen<br />
+            {t.urgency.title1}<br />
             <span className="relative">
-              tus Bolsas de Papel?
+              {t.urgency.title2}
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
                 <path d="M2 10C50 4 100 2 150 6C200 10 250 4 298 8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-white/50"/>
               </svg>
             </span>
           </h2>
-          
+
           <p className="text-white/95 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow">
-            <strong>Nosotros te resolvemos.</strong> Contamos con capacidad para pedidos urgentes 
-            y tiempos de entrega express.
+            <strong>{t.urgency.textBold}</strong> {t.urgency.textRest}
           </p>
 
           {/* Features */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
             <div className="flex items-center gap-2 px-4 py-2 bg-white/15 rounded-lg border border-white/30 backdrop-blur-sm">
               <Zap className="w-5 h-5 text-white" />
-              <span className="text-white text-sm font-medium">Producción Rápida</span>
+              <span className="text-white text-sm font-medium">{t.urgency.feature1}</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-white/15 rounded-lg border border-white/30 backdrop-blur-sm">
               <Truck className="w-5 h-5 text-white" />
-              <span className="text-white text-sm font-medium">Envío a Todo México</span>
+              <span className="text-white text-sm font-medium">{t.urgency.feature2}</span>
             </div>
           </div>
-          
+
           <a
             href={whatsappLink}
             target="_blank"
@@ -74,12 +75,12 @@ const Urgency = () => {
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-secondary/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <MessageCircle className="w-6 h-6 relative z-10" />
-            <span className="relative z-10">Escríbenos Ahora</span>
+            <span className="relative z-10">{t.urgency.cta}</span>
           </a>
-          
+
           <p className="mt-6 text-white/80 text-sm flex items-center justify-center gap-2">
             <span className="inline-block w-2 h-2 bg-white rounded-full animate-pulse" />
-            Respuesta inmediata por WhatsApp
+            {t.urgency.footnote}
           </p>
         </div>
       </div>

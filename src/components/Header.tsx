@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { NavLink } from "./NavLink";
+import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/logo.png";
 
 const WA_NEW = "https://wa.me/525545925827?text=Hola%2C%20quiero%20cotizar%20bolsas%20de%20papel%20kraft.%20Mi%20negocio%20es%20%5Btipo%20de%20negocio%20o%20producto%20que%20vendo%5D%2C%20la%20bolsa%20que%20necesito%20es%20de%20aproximadamente%20%5Bancho%20%C3%97%20alto%5D%20cm%20y%20calculo%20unas%20%5Bcantidad%5D%20piezas.%20%C2%BFMe%20pueden%20ayudar%20a%20elegir%20el%20gramaje%3F";
@@ -10,6 +11,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -18,11 +20,21 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: "Inicio", href: isHome ? "#inicio" : "/" },
-    { label: "Catálogo", href: "/bolsas-catalogo" },
-    { label: "Nosotros", href: isHome ? "#nosotros" : "/#nosotros" },
-    { label: "Contacto", href: isHome ? "#contacto" : "/#contacto" },
+    { label: t.header.nav.inicio, href: isHome ? "#inicio" : "/" },
+    { label: t.header.nav.catalogo, href: "/bolsas-catalogo" },
+    { label: t.header.nav.nosotros, href: isHome ? "#nosotros" : "/#nosotros" },
+    { label: t.header.nav.contacto, href: isHome ? "#contacto" : "/#contacto" },
   ];
+
+  const LanguageToggle = ({ className = "" }: { className?: string }) => (
+    <button
+      onClick={toggleLanguage}
+      className={`text-sm font-semibold px-3 py-1.5 rounded-full border transition-colors duration-200 ${className}`}
+      aria-label="Cambiar idioma / Switch language"
+    >
+      {language === "es" ? "EN" : "ES"}
+    </button>
+  );
 
   return (
     <header
@@ -58,29 +70,35 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <LanguageToggle
+              className={isScrolled ? "border-border text-foreground/80 hover:bg-secondary/50" : "border-white/40 text-white hover:bg-white/10"}
+            />
             <a
               href={WA_NEW}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-soft hover:shadow-elevated text-sm"
             >
-              <span>Cotiza Ahora</span>
+              <span>{t.header.cta}</span>
             </a>
           </div>
 
           {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {isMobileMenuOpen
-                ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              }
-            </svg>
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <LanguageToggle className={isScrolled ? "border-border text-foreground/80" : "border-white/40 text-white"} />
+            <button
+              className="p-2 text-foreground"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {isMobileMenuOpen
+                  ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                }
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
@@ -99,7 +117,7 @@ const Header = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 mx-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 text-sm"
             >
-              <span>Cotiza Ahora</span>
+              <span>{t.header.cta}</span>
             </a>
           </div>
         )}

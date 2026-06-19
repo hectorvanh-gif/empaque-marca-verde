@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -27,7 +29,7 @@ const Contact = () => {
     if (!formData.name.trim() || formData.name.length > 100) {
       toast({
         title: "Error",
-        description: "Por favor ingresa un nombre válido (máximo 100 caracteres).",
+        description: t.contact.errors.invalidName,
         variant: "destructive",
       });
       setIsSubmitting(false);
@@ -37,7 +39,7 @@ const Contact = () => {
     if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       toast({
         title: "Error",
-        description: "Por favor ingresa un correo electrónico válido.",
+        description: t.contact.errors.invalidEmail,
         variant: "destructive",
       });
       setIsSubmitting(false);
@@ -69,8 +71,8 @@ const Contact = () => {
       );
 
       toast({
-        title: "¡Gracias por tu interés!",
-        description: "Tu solicitud fue enviada. Te redirigiremos a WhatsApp.",
+        title: t.contact.successTitle,
+        description: t.contact.successDesc,
       });
 
       // Redirect to WhatsApp
@@ -85,7 +87,7 @@ const Contact = () => {
       }
       toast({
         title: "Error",
-        description: "Hubo un problema al enviar tu solicitud. Por favor intenta de nuevo.",
+        description: t.contact.errors.generic,
         variant: "destructive",
       });
     } finally {
@@ -96,20 +98,20 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
-      label: "Correo electrónico",
+      label: t.contact.infoLabels.email,
       value: "labolsadetumarca@gmail.com",
       href: "mailto:labolsadetumarca@gmail.com",
     },
     {
       icon: Phone,
-      label: "WhatsApp",
+      label: t.contact.infoLabels.whatsapp,
       value: "+52 1 55 4592 5827",
       href: "https://wa.me/5215545925827",
     },
     {
       icon: MapPin,
-      label: "Ubicación",
-      value: "Ciudad de México, México",
+      label: t.contact.infoLabels.location,
+      value: t.contact.locationValue,
       href: null,
     },
   ];
@@ -121,21 +123,20 @@ const Contact = () => {
           {/* Form */}
           <div>
             <span className="inline-block text-accent font-medium text-sm tracking-wide uppercase mb-4">
-              Contacto
+              {t.contact.eyebrow}
             </span>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
-              Solicita Tu Cotización
+              {t.contact.heading}
             </h2>
             <p className="text-muted-foreground mb-8">
-              Cuéntanos sobre tu proyecto y te enviaremos una cotización personalizada 
-              en menos de 24 horas.
+              {t.contact.desc}
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Nombre *
+                    {t.contact.labels.name}
                   </label>
                   <input
                     type="text"
@@ -146,12 +147,12 @@ const Contact = () => {
                     required
                     maxLength={100}
                     className="w-full px-4 py-3 bg-background border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
-                    placeholder="Tu nombre"
+                    placeholder={t.contact.placeholders.name}
                   />
                 </div>
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                    Empresa
+                    {t.contact.labels.company}
                   </label>
                   <input
                     type="text"
@@ -161,7 +162,7 @@ const Contact = () => {
                     onChange={handleChange}
                     maxLength={100}
                     className="w-full px-4 py-3 bg-background border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
-                    placeholder="Nombre de tu empresa"
+                    placeholder={t.contact.placeholders.company}
                   />
                 </div>
               </div>
@@ -169,7 +170,7 @@ const Contact = () => {
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Correo electrónico *
+                    {t.contact.labels.email}
                   </label>
                   <input
                     type="email"
@@ -180,12 +181,12 @@ const Contact = () => {
                     required
                     maxLength={255}
                     className="w-full px-4 py-3 bg-background border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
-                    placeholder="tu@email.com"
+                    placeholder={t.contact.placeholders.email}
                   />
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                    Teléfono
+                    {t.contact.labels.phone}
                   </label>
                   <input
                     type="tel"
@@ -195,14 +196,14 @@ const Contact = () => {
                     onChange={handleChange}
                     maxLength={20}
                     className="w-full px-4 py-3 bg-background border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
-                    placeholder="+52 55 1234 5678"
+                    placeholder={t.contact.placeholders.phone}
                   />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Mensaje
+                  {t.contact.labels.message}
                 </label>
                 <textarea
                   id="message"
@@ -212,7 +213,7 @@ const Contact = () => {
                   rows={4}
                   maxLength={1000}
                   className="w-full px-4 py-3 bg-background border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all resize-none"
-                  placeholder="Cuéntanos sobre tu proyecto: tipo de bolsa, cantidad, tamaño, diseño..."
+                  placeholder={t.contact.placeholders.message}
                 />
               </div>
 
@@ -222,11 +223,11 @@ const Contact = () => {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-soft hover:shadow-elevated"
               >
                 {isSubmitting ? (
-                  "Enviando..."
+                  t.contact.sending
                 ) : (
                   <>
                     <Send size={18} />
-                    Enviar Solicitud
+                    {t.contact.submit}
                   </>
                 )}
               </button>
@@ -237,9 +238,9 @@ const Contact = () => {
           <div className="lg:pl-8">
             <div className="bg-secondary/30 rounded-2xl p-8 lg:p-10 h-full">
               <h3 className="font-display text-2xl text-foreground mb-6">
-                Información de Contacto
+                {t.contact.infoTitle}
               </h3>
-              
+
               <div className="space-y-6 mb-10">
                 {contactInfo.map((item, index) => (
                   <div key={index} className="flex items-start gap-4">
@@ -269,7 +270,7 @@ const Contact = () => {
 
               {/* Social Links */}
               <div>
-                <p className="text-sm text-muted-foreground mb-4">Síguenos en redes</p>
+                <p className="text-sm text-muted-foreground mb-4">{t.contact.followUs}</p>
                 <div className="flex gap-3">
                   <a
                     href="https://www.facebook.com/Labolsadetumarca"
