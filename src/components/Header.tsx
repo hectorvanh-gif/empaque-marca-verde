@@ -36,7 +36,7 @@ const Header = () => {
           <Link to="/" className="flex items-center">
             <img
               src={logo}
-              alt="BolsasMX"
+              alt="La Bolsa de Tu Marca"
               className="h-10 md:h-12 w-auto"
             />
           </Link>
