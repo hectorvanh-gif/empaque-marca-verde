@@ -82,12 +82,9 @@ const BolsasKraftReciclado = () => {
   return (
     <>
       <Helmet>
+        {/* description y canonical se inyectan por ruta en scripts/prerender.mjs
+            (HTML estático) para evitar tags duplicados al hidratar */}
         <title>Bolsas de Papel Kraft Reciclado | Medidas y Precios | BolsasMX</title>
-        <meta
-          name="description"
-          content="Bolsas de papel kraft reciclado fabricadas en México. Líneas con asa, delivery, boutique y botella. Certificación FSC, impresión a 2 tintas. Solicita cotización."
-        />
-        <link rel="canonical" href="https://www.bolsasmx.com/bolsas-kraft-reciclado" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

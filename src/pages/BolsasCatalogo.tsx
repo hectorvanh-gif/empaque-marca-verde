@@ -18,12 +18,9 @@ const BolsasCatalogo = () => {
   return (
     <>
       <Helmet>
-        <title>Catálogo de Bolsas | BolsasMX</title>
-        <meta
-          name="description"
-          content="Catálogo completo de bolsas de papel: kraft reciclado, modernas, estilo europeo, laminado mate, alto brillo y más. Fabricantes directos en México."
-        />
-        <link rel="canonical" href="https://www.bolsasmx.com/bolsas-catalogo" />
+        {/* description y canonical se inyectan por ruta en scripts/prerender.mjs
+            (HTML estático) para evitar tags duplicados al hidratar */}
+        <title>Catálogo de Bolsas de Papel | BolsasMX</title>
       </Helmet>
       <Header />
 
