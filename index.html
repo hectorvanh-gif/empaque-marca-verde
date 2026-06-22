@@ -39,27 +39,95 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "La Bolsa de Tu Marca",
-      "description": "Empresa mexicana especializada en la fabricación de bolsas de papel personalizadas y ecológicas",
-      "url": "https://www.bolsasmx.com",
-      "logo": "https://www.bolsasmx.com/logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+52-1-55-4592-5827",
-        "contactType": "sales",
-        "areaServed": "MX",
-        "availableLanguage": "Spanish"
-      },
-      "sameAs": [
-        "https://www.facebook.com/Labolsadetumarca",
-        "https://www.instagram.com/labolsadetumarca/"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ciudad de México",
-        "addressCountry": "MX"
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.bolsasmx.com/#organization",
+          "name": "La Bolsa de Tu Marca",
+          "alternateName": "BolsasMX",
+          "description": "Fabricante mexicano de bolsas de papel kraft personalizadas, ecológicas y a la medida para retail, restaurantes, boutiques y marcas corporativas.",
+          "url": "https://www.bolsasmx.com",
+          "logo": "https://www.bolsasmx.com/logo.png",
+          "image": "https://www.bolsasmx.com/og-image.png",
+          "email": "labolsadetumarca@gmail.com",
+          "knowsLanguage": ["es", "en"],
+          "areaServed": {
+            "@type": "Country",
+            "name": "México"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+52-55-4592-5827",
+            "contactType": "sales",
+            "areaServed": "MX",
+            "availableLanguage": ["Spanish", "English"]
+          },
+          "sameAs": [
+            "https://www.facebook.com/Labolsadetumarca",
+            "https://www.instagram.com/labolsadetumarca/"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ciudad de México",
+            "addressRegion": "CDMX",
+            "addressCountry": "MX"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.bolsasmx.com/#website",
+          "url": "https://www.bolsasmx.com",
+          "name": "La Bolsa de Tu Marca",
+          "publisher": { "@id": "https://www.bolsasmx.com/#organization" },
+          "inLanguage": "es-MX"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.bolsasmx.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Qué medidas tienen las bolsas de papel kraft?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Manejamos tallas estándar chica, mediana, grande y jumbo, además de líneas con asa, delivery, boutique y botella. También fabricamos bolsas a la medida con ancho de 12 a 22 cm, alto de 22.5 a 47 cm y fuelle de 6 a 18 cm."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué gramaje manejan las bolsas de papel?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ofrecemos gramajes de 60 a 160 g/m². El gramaje base se recomienda según el uso y puede ajustarse según el peso del contenido. Todos los gramajes son compatibles con impresión a 2 tintas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Las bolsas son ecológicas?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Fabricamos con papel kraft 100% reciclado y contamos con certificación FSC. Son bolsas biodegradables y reutilizables."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Puedo personalizar las bolsas con mi logotipo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Personalizamos las bolsas con tu logo, colores y diseño mediante impresión a 2 tintas, además de medidas y asas a la medida de tu marca."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Hacen envíos a todo México?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, somos fabricantes directos y enviamos a todo México. Te enviamos una cotización personalizada en menos de 24 horas."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
   </head>

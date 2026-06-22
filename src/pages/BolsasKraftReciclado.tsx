@@ -88,6 +88,32 @@ const BolsasKraftReciclado = () => {
           content="Bolsas de papel kraft reciclado fabricadas en México. Líneas con asa, delivery, boutique y botella. Certificación FSC, impresión a 2 tintas. Solicita cotización."
         />
         <link rel="canonical" href="https://www.bolsasmx.com/bolsas-kraft-reciclado" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Bolsas de Papel Kraft Reciclado",
+            "image": "https://www.bolsasmx.com/og-image.png",
+            "description":
+              "Bolsas de papel kraft 100% reciclado fabricadas en México. Disponibles en líneas con asa, delivery, boutique y botella, en tallas chica a jumbo y gramajes de 60 a 160 g/m². Personalizables con impresión a 2 tintas y medidas a la medida.",
+            "brand": {
+              "@type": "Brand",
+              "name": "La Bolsa de Tu Marca",
+            },
+            "material": "Papel kraft reciclado",
+            "category": "Bolsas de papel personalizadas",
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "La Bolsa de Tu Marca",
+              "url": "https://www.bolsasmx.com",
+            },
+            "additionalProperty": [
+              { "@type": "PropertyValue", "name": "Gramaje", "value": "60 a 160 g/m²" },
+              { "@type": "PropertyValue", "name": "Certificación", "value": "FSC" },
+              { "@type": "PropertyValue", "name": "Impresión", "value": "2 tintas" },
+            ],
+          })}
+        </script>
       </Helmet>
       <Header />
 
