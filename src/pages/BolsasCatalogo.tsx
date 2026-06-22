@@ -8,7 +8,7 @@ import catKraftReciclado from "@/assets/catalog/cat-kraft-reciclado.jpg";
 import catToteBags from "@/assets/catalog/cat-tote-bags.jpg";
 
 const BolsasCatalogo = () => {
-  const { t } = useLanguage();
+  const { t, localePath } = useLanguage();
 
   const categories = [
     { title: t.bolsasCatalogo.categories.kraft, image: catKraftReciclado, href: "/bolsas-kraft-reciclado" },
@@ -86,7 +86,7 @@ const BolsasCatalogo = () => {
                   </>
                 );
                 return cat.href ? (
-                  <a key={cat.title} href={cat.href} className="group flex flex-col items-center text-center w-56 md:w-64">
+                  <a key={cat.title} href={localePath(cat.href)} className="group flex flex-col items-center text-center w-56 md:w-64">
                     {content}
                   </a>
                 ) : (

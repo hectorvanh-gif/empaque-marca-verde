@@ -10,8 +10,8 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === "/";
-  const { language, toggleLanguage, t } = useLanguage();
+  const { language, toggleLanguage, localePath, t } = useLanguage();
+  const isHome = location.pathname === "/" || location.pathname === "/en";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -20,10 +20,10 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: t.header.nav.inicio, href: isHome ? "#inicio" : "/" },
-    { label: t.header.nav.catalogo, href: "/bolsas-catalogo" },
-    { label: t.header.nav.nosotros, href: isHome ? "#nosotros" : "/#nosotros" },
-    { label: t.header.nav.contacto, href: isHome ? "#contacto" : "/#contacto" },
+    { label: t.header.nav.inicio, href: isHome ? "#inicio" : localePath("/") },
+    { label: t.header.nav.catalogo, href: localePath("/bolsas-catalogo") },
+    { label: t.header.nav.nosotros, href: isHome ? "#nosotros" : `${localePath("/")}#nosotros` },
+    { label: t.header.nav.contacto, href: isHome ? "#contacto" : `${localePath("/")}#contacto` },
   ];
 
   const LanguageToggle = ({ className = "" }: { className?: string }) => (
@@ -45,7 +45,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to={localePath("/")} className="flex items-center">
             <img
               src={logo}
               alt="La Bolsa de Tu Marca"
