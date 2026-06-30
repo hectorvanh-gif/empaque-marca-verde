@@ -3,14 +3,13 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const isEs = language === "es";
   const navLinks = [
-    { label: t.footer.navLinks.inicio, href: "#inicio" },
-    { label: t.footer.navLinks.nosotros, href: "#nosotros" },
-    { label: t.footer.navLinks.productos, href: "#productos" },
-    { label: t.footer.navLinks.beneficios, href: "#beneficios" },
-    { label: t.footer.navLinks.proceso, href: "#proceso" },
-    { label: t.footer.navLinks.contacto, href: "#contacto" },
+    { label: t.footer.navLinks.inicio, href: isEs ? "/es" : "/" },
+    { label: t.footer.navLinks.productos, href: isEs ? "/es/bolsas-papel" : "/paper-bags" },
+    { label: t.footer.navLinks.nosotros, href: isEs ? "/es/nosotros" : "/about-us" },
+    { label: t.footer.navLinks.contacto, href: isEs ? "/es/contacto" : "/contact" },
   ];
 
   return (

@@ -11,7 +11,8 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { language, toggleLanguage, localePath, t } = useLanguage();
-  const isHome = location.pathname === "/" || location.pathname === "/en";
+  const isHome = location.pathname === "/" || location.pathname === "/es";
+  const isEs = language === "es";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -21,9 +22,9 @@ const Header = () => {
 
   const navLinks = [
     { label: t.header.nav.inicio, href: isHome ? "#inicio" : localePath("/") },
-    { label: t.header.nav.catalogo, href: localePath("/bolsas-catalogo") },
-    { label: t.header.nav.nosotros, href: isHome ? "#nosotros" : `${localePath("/")}#nosotros` },
-    { label: t.header.nav.contacto, href: isHome ? "#contacto" : `${localePath("/")}#contacto` },
+    { label: t.header.nav.catalogo, href: isEs ? "/es/bolsas-papel" : "/paper-bags" },
+    { label: t.header.nav.nosotros, href: isEs ? "/es/nosotros" : "/about-us" },
+    { label: t.header.nav.contacto, href: isEs ? "/es/contacto" : "/contact" },
   ];
 
   const LanguageToggle = ({ className = "" }: { className?: string }) => (

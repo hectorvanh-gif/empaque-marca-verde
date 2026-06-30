@@ -3,50 +3,199 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.bolsasmx.com/</loc>
-    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bolsasmx.com/"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.bolsasmx.com/bolsas-catalogo</loc>
-    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/bolsas-catalogo"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/en/bolsas-catalogo"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bolsasmx.com/bolsas-catalogo"/>
+    <loc>https://www.bolsasmx.com/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/paper-bags</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/bolsas-papel"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.bolsasmx.com/bolsas-kraft-reciclado</loc>
-    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/bolsas-kraft-reciclado"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/en/bolsas-kraft-reciclado"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bolsasmx.com/bolsas-kraft-reciclado"/>
+    <loc>https://www.bolsasmx.com/es/bolsas-papel</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/paper-bags"/>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.bolsasmx.com/en</loc>
-    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bolsasmx.com/"/>
+    <loc>https://www.bolsasmx.com/paper-bags/kraft</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/bolsas-papel/kraft"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/bolsas-papel/kraft</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/paper-bags/kraft"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/paper-bags/white</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/bolsas-papel/blancas"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/bolsas-papel/blancas</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/paper-bags/white"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/paper-bags/food</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/bolsas-papel/comida"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/bolsas-papel/comida</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/paper-bags/food"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/paper-bags/delivery</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/bolsas-papel/entrega"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/bolsas-papel/entrega</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/paper-bags/delivery"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/paper-bags/retail</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/bolsas-papel/menudeo"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/bolsas-papel/menudeo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/paper-bags/retail"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/paper-bags/bread</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/bolsas-papel/para-pan"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.bolsasmx.com/en/bolsas-catalogo</loc>
-    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/bolsas-catalogo"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/en/bolsas-catalogo"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bolsasmx.com/bolsas-catalogo"/>
+    <loc>https://www.bolsasmx.com/es/bolsas-papel/para-pan</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/paper-bags/bread"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/paper-bags/custom</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/bolsas-papel/personalizadas"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/bolsas-papel/personalizadas</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/paper-bags/custom"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/bolsas-papel/estraza</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/services</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/servicios"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.bolsasmx.com/en/bolsas-kraft-reciclado</loc>
-    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/bolsas-kraft-reciclado"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/en/bolsas-kraft-reciclado"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bolsasmx.com/bolsas-kraft-reciclado"/>
+    <loc>https://www.bolsasmx.com/es/servicios</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/services"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/services/manufacturing</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/servicios/fabricacion"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/servicios/fabricacion</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/services/manufacturing"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/services/custom-printing</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/servicios/logo-personalizado"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/servicios/logo-personalizado</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/services/custom-printing"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/wholesale</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/mayoreo"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/mayoreo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/wholesale"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/samples</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/muestras"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/muestras</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/samples"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/about-us</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/nosotros"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/nosotros</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/about-us"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/contacto"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/contacto</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/contact"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

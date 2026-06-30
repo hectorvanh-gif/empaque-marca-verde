@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/en/bolsas-catalogo", "destination": "/paper-bags", "permanent": true },
+    { "source": "/en/bolsas-kraft-reciclado", "destination": "/paper-bags/kraft", "permanent": true },
+    { "source": "/bolsas-catalogo", "destination": "/es/bolsas-papel", "permanent": true },
+    { "source": "/bolsas-kraft-reciclado", "destination": "/es/bolsas-papel/kraft", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/((?!.*\\.html$).*)",

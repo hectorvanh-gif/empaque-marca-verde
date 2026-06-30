@@ -1,0 +1,290 @@
+{
+  "site": "https://www.bolsasmx.com",
+  "pages": [
+    {
+      "id": "home",
+      "category": "home",
+      "priority": "1.0",
+      "en": {
+        "slug": "/",
+        "h1": "Wholesale Paper Bags, Manufactured in Mexico",
+        "title": "Paper Bags Wholesale | Manufacturer in Mexico | BolsasMX",
+        "description": "Direct manufacturer of custom paper bags in Mexico. FSC certified, 100% recycled kraft. Kraft, white, food, delivery and retail lines. Get a quote in 24h."
+      },
+      "es": {
+        "slug": "/es",
+        "h1": "Bolsas de Papel al Mayoreo. Fabricante Directo en México.",
+        "title": "Bolsas de Papel al Mayoreo | Fabricante en México | BolsasMX",
+        "description": "Fabricamos bolsas de papel personalizadas y ecológicas en México. Certificación FSC, kraft 100% reciclado. Cotiza en menos de 24 horas."
+      }
+    },
+    {
+      "id": "pillar",
+      "category": "product-hub",
+      "priority": "0.9",
+      "en": {
+        "slug": "/paper-bags",
+        "h1": "Wholesale Paper Bags — Direct from Manufacturer",
+        "title": "Wholesale Paper Bags | All Types | BolsasMX",
+        "description": "Paper bags wholesale, direct from a Mexican manufacturer. Kraft, white, food, delivery, retail, bread and custom printed bags. No middleman."
+      },
+      "es": {
+        "slug": "/es/bolsas-papel",
+        "h1": "Bolsas de Papel al Mayoreo — Todos los Tipos, Cualquier Volumen",
+        "title": "Bolsas de Papel al Mayoreo | Todos los Tipos | BolsasMX",
+        "description": "Bolsas de papel al mayoreo, fabricante directo en México. Kraft, blancas, comida, entrega, menudeo, para pan y personalizadas. Sin intermediarios."
+      }
+    },
+    {
+      "id": "kraft",
+      "category": "product",
+      "priority": "0.85",
+      "en": {
+        "slug": "/paper-bags/kraft",
+        "h1": "Kraft Paper Bags — Wholesale, Made in Mexico",
+        "title": "Kraft Paper Bags Wholesale | BolsasMX",
+        "description": "FSC certified kraft paper bags, 100% recycled, made in Mexico. Handle, delivery, boutique and bottle lines. Custom logo printing available."
+      },
+      "es": {
+        "slug": "/es/bolsas-papel/kraft",
+        "h1": "Bolsas de Papel Kraft al Mayoreo — Fabricante Directo",
+        "title": "Bolsas de Papel Kraft al Mayoreo | BolsasMX",
+        "description": "Bolsas de papel kraft 100% recicladas, certificación FSC, fabricadas en México. Líneas con asa, delivery, boutique y botella. Cotiza al mayoreo."
+      }
+    },
+    {
+      "id": "white",
+      "category": "product",
+      "priority": "0.75",
+      "en": {
+        "slug": "/paper-bags/white",
+        "h1": "White Paper Bags — Custom Branded for Retail",
+        "title": "White Paper Bags Wholesale | BolsasMX",
+        "description": "Custom white paper bags for retail and boutique brands. Logo printing, multiple sizes, FSC certified paper. Direct from manufacturer in Mexico."
+      },
+      "es": {
+        "slug": "/es/bolsas-papel/blancas",
+        "h1": "Bolsas de Papel Blancas con Logo — Al Mayoreo",
+        "title": "Bolsas de Papel Blancas con Logo | BolsasMX",
+        "description": "Bolsas de papel blancas personalizadas con tu logo. Ideales para tiendas departamentales y boutiques. Fabricante directo en México."
+      }
+    },
+    {
+      "id": "food",
+      "category": "product",
+      "priority": "0.85",
+      "en": {
+        "slug": "/paper-bags/food",
+        "h1": "Paper Bags for Food — Wholesale for Restaurants",
+        "title": "Paper Bags for Food & Restaurants | BolsasMX",
+        "description": "Paper bags for food service and restaurants, made in Mexico. Sizes for takeout, sandwiches and bread. Custom branding available."
+      },
+      "es": {
+        "slug": "/es/bolsas-papel/comida",
+        "h1": "Bolsas de Papel para Comida y Restaurantes — Al Mayoreo",
+        "title": "Bolsas de Papel para Comida y Restaurantes | BolsasMX",
+        "description": "Bolsas de papel para comida, restaurantes y delivery. Fabricante directo en México. Personalizables con tu logo. Cotiza al mayoreo."
+      }
+    },
+    {
+      "id": "delivery",
+      "category": "product",
+      "priority": "0.75",
+      "en": {
+        "slug": "/paper-bags/delivery",
+        "h1": "Paper Delivery Bags — Branded, Bulk",
+        "title": "Paper Delivery Bags Wholesale | BolsasMX",
+        "description": "Paper delivery bags with reinforced handles, custom branded. Direct from manufacturer in Mexico. Built for restaurants and ecommerce."
+      },
+      "es": {
+        "slug": "/es/bolsas-papel/entrega",
+        "h1": "Bolsas de Papel para Delivery — Con Tu Logo",
+        "title": "Bolsas de Papel para Delivery | BolsasMX",
+        "description": "Bolsas de papel para delivery y pedidos a domicilio, con asas reforzadas y tu logo impreso. Fabricante directo en México."
+      }
+    },
+    {
+      "id": "retail",
+      "category": "product",
+      "priority": "0.75",
+      "en": {
+        "slug": "/paper-bags/retail",
+        "h1": "Retail Paper Bags — Custom Branded",
+        "title": "Retail Paper Bags Wholesale | BolsasMX",
+        "description": "Custom retail paper bags for boutiques, fashion and gift stores. Multiple sizes and handle types. Direct manufacturer in Mexico."
+      },
+      "es": {
+        "slug": "/es/bolsas-papel/menudeo",
+        "h1": "Bolsas de Papel para Tiendas de Menudeo — Al Mayoreo",
+        "title": "Bolsas de Papel para Tiendas y Menudeo | BolsasMX",
+        "description": "Bolsas de papel para tiendas de menudeo, boutiques y franquicias. Personalizables con tu logo. Fabricante directo en México."
+      }
+    },
+    {
+      "id": "bread",
+      "category": "product",
+      "priority": "0.7",
+      "en": {
+        "slug": "/paper-bags/bread",
+        "h1": "Paper Bread Bags — Wholesale for Bakeries",
+        "title": "Paper Bread Bags Wholesale | BolsasMX",
+        "description": "Paper bread bags for bakeries and food chains, made in Mexico. Multiple sizes, food-safe paper, custom branding available."
+      },
+      "es": {
+        "slug": "/es/bolsas-papel/para-pan",
+        "h1": "Bolsas de Papel para Pan — Panaderías al Mayoreo",
+        "title": "Bolsas de Papel para Pan | BolsasMX",
+        "description": "Bolsas de papel para pan, panaderías y cadenas. Fabricante directo en México. Medidas para bolillo, pan dulce y pan de caja."
+      }
+    },
+    {
+      "id": "custom",
+      "category": "product",
+      "priority": "0.8",
+      "en": {
+        "slug": "/paper-bags/custom",
+        "h1": "Custom Printed Paper Bags — Your Logo, Any Volume",
+        "title": "Custom Printed Paper Bags | BolsasMX",
+        "description": "Custom printed paper bags with your logo, up to 2 colors. Works on kraft, white, food and delivery bags. Direct manufacturer in Mexico."
+      },
+      "es": {
+        "slug": "/es/bolsas-papel/personalizadas",
+        "h1": "Bolsas de Papel Personalizadas con Logo — Al Mayoreo",
+        "title": "Bolsas de Papel Personalizadas con Logo | BolsasMX",
+        "description": "Bolsas de papel personalizadas con tu logo, impresión a 2 tintas. Aplica a kraft, blancas, comida y entrega. Cotiza al mayoreo."
+      }
+    },
+    {
+      "id": "estraza",
+      "category": "product",
+      "priority": "0.65",
+      "noEnEquivalent": true,
+      "enHreflangFallback": "/paper-bags/kraft",
+      "es": {
+        "slug": "/es/bolsas-papel/estraza",
+        "h1": "Bolsas de Papel Estraza al Mayoreo",
+        "title": "Bolsas de Papel Estraza al Mayoreo | BolsasMX",
+        "description": "Bolsas de papel estraza, la opción más económica al mayoreo. Ideal para mercados, fondas y taquerías. Fabricante directo en México."
+      }
+    },
+    {
+      "id": "services",
+      "category": "service-hub",
+      "priority": "0.6",
+      "en": {
+        "slug": "/services",
+        "h1": "Paper Bag Manufacturing Services",
+        "title": "Manufacturing Services | BolsasMX",
+        "description": "Paper bag manufacturing and custom printing services in Mexico. We manufacture directly — no middleman, no reseller markup."
+      },
+      "es": {
+        "slug": "/es/servicios",
+        "h1": "Servicios de Fabricación de Bolsas de Papel",
+        "title": "Servicios de Fabricación | BolsasMX",
+        "description": "Servicios de fabricación e impresión de logo en bolsas de papel en México. Somos fabricantes directos, no revendedores."
+      }
+    },
+    {
+      "id": "manufacturing",
+      "category": "service",
+      "priority": "0.55",
+      "en": {
+        "slug": "/services/manufacturing",
+        "h1": "Paper Bag Manufacturing in Mexico",
+        "title": "Paper Bag Manufacturer Mexico | BolsasMX",
+        "description": "Direct paper bag manufacturer in Mexico City. FSC certified materials, quality control and recurring supply agreements for businesses."
+      },
+      "es": {
+        "slug": "/es/servicios/fabricacion",
+        "h1": "Fabricación de Bolsas de Papel en México",
+        "title": "Fabricante de Bolsas de Papel en México | BolsasMX",
+        "description": "Fabricante directo de bolsas de papel en Ciudad de México. Materiales certificados FSC, control de calidad y pedidos recurrentes."
+      }
+    },
+    {
+      "id": "custom-printing",
+      "category": "service",
+      "priority": "0.55",
+      "en": {
+        "slug": "/services/custom-printing",
+        "h1": "Custom Logo Printing on Paper Bags",
+        "title": "Custom Paper Bag Printing | BolsasMX",
+        "description": "Custom logo printing on paper bags, up to 2 colors. Artwork requirements, proofing process and turnaround times explained."
+      },
+      "es": {
+        "slug": "/es/servicios/logo-personalizado",
+        "h1": "Impresión de Logo en Bolsas de Papel",
+        "title": "Impresión de Logo en Bolsas de Papel | BolsasMX",
+        "description": "Impresión de logo en bolsas de papel, hasta 2 tintas. Qué archivo enviar, proceso de prueba y tiempos de entrega."
+      }
+    },
+    {
+      "id": "wholesale",
+      "category": "wholesale",
+      "priority": "0.85",
+      "en": {
+        "slug": "/wholesale",
+        "h1": "Paper Bags Wholesale — Direct from Factory",
+        "title": "Paper Bags Wholesale Mexico | BolsasMX",
+        "description": "Wholesale paper bags direct from the manufacturer. No distributor markup. Recurring supply for restaurants, retail and hotels."
+      },
+      "es": {
+        "slug": "/es/mayoreo",
+        "h1": "Bolsas de Papel al Mayoreo — Fabricante Directo",
+        "title": "Bolsas de Papel al Mayoreo | BolsasMX",
+        "description": "Bolsas de papel al mayoreo, fabricante directo sin intermediarios. Suministro recurrente para restaurantes, retail y hoteles."
+      }
+    },
+    {
+      "id": "samples",
+      "category": "samples",
+      "priority": "0.6",
+      "en": {
+        "slug": "/samples",
+        "h1": "Request Paper Bag Samples",
+        "title": "Request Paper Bag Samples | BolsasMX",
+        "description": "Request paper bag samples before placing a bulk order — kraft, white, food bag and a custom printed example."
+      },
+      "es": {
+        "slug": "/es/muestras",
+        "h1": "Solicitar Muestras de Bolsas de Papel",
+        "title": "Solicitar Muestras de Bolsas de Papel | BolsasMX",
+        "description": "Solicita muestras de bolsas de papel antes de tu pedido al mayoreo — kraft, blancas, para comida y un ejemplo personalizado."
+      }
+    },
+    {
+      "id": "about",
+      "category": "about",
+      "priority": "0.5",
+      "en": {
+        "slug": "/about-us",
+        "h1": "About BolsasMX — Paper Bag Manufacturer in Mexico",
+        "title": "About Us | BolsasMX",
+        "description": "BolsasMX (La Bolsa de Tu Marca) — over a decade manufacturing custom paper bags in Mexico City. FSC certified, direct manufacturer."
+      },
+      "es": {
+        "slug": "/es/nosotros",
+        "h1": "Somos Fabricantes de Bolsas de Papel en México",
+        "title": "Nosotros | BolsasMX",
+        "description": "La Bolsa de Tu Marca (BolsasMX) — más de una década fabricando bolsas de papel personalizadas en Ciudad de México. Certificación FSC."
+      }
+    },
+    {
+      "id": "contact",
+      "category": "contact",
+      "priority": "0.7",
+      "en": {
+        "slug": "/contact",
+        "h1": "Get a Quote",
+        "title": "Contact Us | Get a Quote | BolsasMX",
+        "description": "Request a quote for custom paper bags. We reply within 24 hours by email or WhatsApp."
+      },
+      "es": {
+        "slug": "/es/contacto",
+        "h1": "Solicitar Cotización",
+        "title": "Contacto | Solicitar Cotización | BolsasMX",
+        "description": "Solicita tu cotización de bolsas de papel personalizadas. Te respondemos en menos de 24 horas por correo o WhatsApp."
+      }
+    }
+  ]
+}

@@ -1,43 +1,40 @@
 import { createContext, useContext, useEffect, ReactNode } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { translations, Language } from "@/i18n/translations";
+import { getAlternatePath } from "@/content/pageRegistry";
 
 interface LanguageContextValue {
   language: Language;
   toggleLanguage: () => void;
-  /** Prefija una ruta interna con el idioma actual: "/bolsas-catalogo" -> "/en/bolsas-catalogo" en inglés */
+  /** Prefija una ruta interna del chrome compartido (header/footer) con el idioma actual */
   localePath: (path: string) => string;
   t: typeof translations.es;
 }
 
 const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);
 
-const isEnglishPath = (pathname: string) =>
-  pathname === "/en" || pathname.startsWith("/en/");
+const isSpanishPath = (pathname: string) =>
+  pathname === "/es" || pathname.startsWith("/es/");
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const language: Language = isEnglishPath(location.pathname) ? "en" : "es";
+  const language: Language = isSpanishPath(location.pathname) ? "es" : "en";
 
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
 
   const localePath = (path: string) => {
-    // path siempre en su forma española (la canónica del routing)
-    if (language === "en") return path === "/" ? "/en" : `/en${path}`;
+    // path siempre en su forma inglesa (la canónica del routing del chrome compartido)
+    if (language === "es") return path === "/" ? "/es" : `/es${path}`;
     return path;
   };
 
   const toggleLanguage = () => {
-    const { pathname, hash } = location;
-    if (language === "es") {
-      navigate((pathname === "/" ? "/en" : `/en${pathname}`) + hash);
-    } else {
-      const stripped = pathname.replace(/^\/en/, "") || "/";
-      navigate(stripped + hash);
-    }
+    const targetLang = language === "en" ? "es" : "en";
+    const alternate = getAlternatePath(location.pathname, targetLang);
+    navigate(alternate + location.hash);
   };
 
   return (
