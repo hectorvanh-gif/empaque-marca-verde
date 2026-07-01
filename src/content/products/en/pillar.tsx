@@ -16,6 +16,14 @@ export const pillarEn: HubPageContent = {
     ctaLabel: "Get a Quote",
     waText: "Hi, I'd like to see your full catalog of paper bags and get a wholesale quote.",
   },
+  featured: {
+    icon: Ruler,
+    eyebrow: "Applies to any type of bag",
+    title: "Sizes & Measurements Chart",
+    description: "Check all standard sizes and paper weights. They apply to any of our paper bag lines.",
+    ctaLabel: "View sizes",
+    path: "/paper-bags/size-chart",
+  },
   gridEyebrow: "Browse by type",
   gridHeading: "Paper Bags for Every Type of Business",
   cards: [
@@ -26,7 +34,6 @@ export const pillarEn: HubPageContent = {
     { icon: Store, title: "Retail", description: "Branded bags for boutiques, fashion and department stores.", path: "/paper-bags/retail" },
     { icon: Croissant, title: "Bread", description: "Bakery bags sized to your bread line, with or without ventilation.", path: "/paper-bags/bread" },
     { icon: Printer, title: "Custom Printed", description: "Logo printing up to 2 colors, applied to any line in our catalog.", path: "/paper-bags/custom" },
-    { icon: Ruler, title: "Size Chart", description: "Standard sizes and paper weights for all our bag lines.", path: "/paper-bags/size-chart" },
   ],
   steps: {
     eyebrow: "How it works",

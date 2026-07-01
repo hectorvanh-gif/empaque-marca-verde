@@ -28,6 +28,14 @@ export interface HubPageContent {
     ctaLabel: string;
     waText: string;
   };
+  featured?: {
+    icon: LucideIcon;
+    eyebrow: string;
+    title: string;
+    description: string;
+    ctaLabel: string;
+    path: string;
+  };
   gridEyebrow: string;
   gridHeading: string;
   cards: HubCard[];
@@ -83,6 +91,32 @@ const HubPage = ({ content }: { content: HubPageContent }) => {
           ctaHref={`${WA_BASE}?text=${encodeURIComponent(content.hero.waText)}`}
           ctaLabel={content.hero.ctaLabel}
         />
+
+        {content.featured && (
+          <section className="pt-8 md:pt-10 bg-background">
+            <div className="container mx-auto px-6 max-w-6xl">
+              <Link
+                to={content.featured.path}
+                className="group flex flex-col sm:flex-row items-center gap-5 p-6 md:p-7 bg-primary/5 border-2 border-primary/20 rounded-2xl hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
+              >
+                <div className="w-14 h-14 shrink-0 bg-primary rounded-xl flex items-center justify-center">
+                  <content.featured.icon className="w-7 h-7 text-primary-foreground" />
+                </div>
+                <div className="flex-1 text-center sm:text-left">
+                  <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-1">
+                    {content.featured.eyebrow}
+                  </span>
+                  <h2 className="font-display text-xl md:text-2xl text-foreground mb-1">{content.featured.title}</h2>
+                  <p className="text-muted-foreground text-sm">{content.featured.description}</p>
+                </div>
+                <span className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-full group-hover:gap-3 transition-all whitespace-nowrap">
+                  {content.featured.ctaLabel}
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </Link>
+            </div>
+          </section>
+        )}
 
         <section className="py-16 md:py-20 bg-background">
           <div className="container mx-auto px-6 max-w-6xl">

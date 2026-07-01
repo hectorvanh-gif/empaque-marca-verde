@@ -16,6 +16,14 @@ export const pillarEs: HubPageContent = {
     ctaLabel: "Cotiza Ahora",
     waText: "Hola, quiero ver su catálogo completo de bolsas de papel y cotizar al mayoreo.",
   },
+  featured: {
+    icon: Ruler,
+    eyebrow: "Aplican a cualquier tipo de bolsa",
+    title: "Medidas y Tabla de Tamaños",
+    description: "Consulta todas las medidas estándar y gramajes. Sirven para cualquiera de nuestras líneas de bolsas de papel.",
+    ctaLabel: "Ver medidas",
+    path: "/es/bolsas-papel/tabla-de-tamanos",
+  },
   gridEyebrow: "Explora por tipo",
   gridHeading: "Bolsas de Papel para Cada Tipo de Negocio",
   cards: [
@@ -27,7 +35,6 @@ export const pillarEs: HubPageContent = {
     { icon: Croissant, title: "Para Pan", description: "Bolsas de panadería a la medida de tu línea de pan.", path: "/es/bolsas-papel/para-pan" },
     { icon: Leaf, title: "Estraza", description: "La opción más económica al mayoreo para alto volumen.", path: "/es/bolsas-papel/estraza" },
     { icon: Printer, title: "Personalizadas", description: "Impresión de logo hasta 2 tintas, aplicable a cualquier línea.", path: "/es/bolsas-papel/personalizadas" },
-    { icon: Ruler, title: "Medidas", description: "Tabla de tamaños estándar y gramajes para todas nuestras líneas de bolsas.", path: "/es/bolsas-papel/tabla-de-tamanos" },
   ],
   steps: {
     eyebrow: "Cómo funciona",
