@@ -13,6 +13,8 @@ const Header = () => {
   const { language, toggleLanguage, localePath, t } = useLanguage();
   const isHome = location.pathname === "/" || location.pathname === "/es";
   const isEs = language === "es";
+  // Texto claro SOLO en la home sobre el video (arriba); en cualquier otro caso, oscuro.
+  const onDark = isHome && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -61,7 +63,7 @@ const Header = () => {
                 key={link.label}
                 to={link.href}
                 className={`text-sm font-medium transition-colors duration-200 hover:opacity-80 ${
-                  isScrolled ? "text-foreground/80" : "text-white"
+                  onDark ? "text-white" : "text-foreground/80"
                 }`}
               >
                 {link.label}
@@ -72,7 +74,7 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <LanguageToggle
-              className={isScrolled ? "border-border text-foreground/80 hover:bg-secondary/50" : "border-white/40 text-white hover:bg-white/10"}
+              className={onDark ? "border-white/40 text-white hover:bg-white/10" : "border-border text-foreground/80 hover:bg-secondary/50"}
             />
             <a
               href={WA_NEW}
@@ -86,9 +88,9 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-2">
-            <LanguageToggle className={isScrolled ? "border-border text-foreground/80" : "border-white/40 text-white"} />
+            <LanguageToggle className={onDark ? "border-white/40 text-white" : "border-border text-foreground/80"} />
             <button
-              className={`p-2 ${isScrolled ? "text-foreground" : "text-white"}`}
+              className={`p-2 ${onDark ? "text-white" : "text-foreground"}`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
