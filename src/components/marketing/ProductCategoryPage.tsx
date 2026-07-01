@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
+import { LucideIcon, Ruler, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -10,7 +12,6 @@ import FAQAccordion from "@/components/marketing/FAQAccordion";
 import ContentSection from "@/components/marketing/ContentSection";
 import DualCTABlock from "@/components/marketing/DualCTABlock";
 import { buildProductSchema, buildFAQSchema, buildBreadcrumbSchema } from "@/lib/schema";
-import { LucideIcon } from "lucide-react";
 
 export interface ProductCategoryContent {
   helmetTitle: string;
@@ -87,6 +88,26 @@ const ProductCategoryPage = ({ content }: { content: ProductCategoryContent }) =
     buildBreadcrumbSchema(content.breadcrumbs),
   ];
 
+  // Muestra el acceso a la tabla de medidas solo en páginas de bolsas de papel.
+  const isEs = content.dualCta.lang === "es";
+  const showSizes = content.breadcrumbs.some(
+    (b) => b.path.includes("bolsas-papel") || b.path.includes("paper-bags")
+  );
+  const sizesPath = isEs ? "/es/bolsas-papel/tabla-de-tamanos" : "/paper-bags/size-chart";
+  const sizesCopy = isEs
+    ? {
+        eyebrow: "Aplican a cualquier tipo de bolsa",
+        title: "¿Buscas las medidas?",
+        desc: "Consulta la tabla de tamaños y gramajes estándar — sirven para todas nuestras líneas de bolsas.",
+        cta: "Ver medidas",
+      }
+    : {
+        eyebrow: "Applies to any type of bag",
+        title: "Looking for sizes?",
+        desc: "Check the standard size and weight chart — it applies to all our bag lines.",
+        cta: "View sizes",
+      };
+
   return (
     <>
       <PageSEO title={content.helmetTitle} schemas={schemas} />
@@ -104,6 +125,32 @@ const ProductCategoryPage = ({ content }: { content: ProductCategoryContent }) =
           image={content.hero.image}
           imageAlt={content.hero.imageAlt}
         />
+
+        {showSizes && (
+          <section className="pt-8 md:pt-10 bg-background">
+            <div className="container mx-auto px-6 max-w-6xl">
+              <Link
+                to={sizesPath}
+                className="group flex flex-col sm:flex-row items-center gap-5 p-6 md:p-7 bg-primary/5 border-2 border-primary/20 rounded-2xl hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
+              >
+                <div className="w-14 h-14 shrink-0 bg-primary rounded-xl flex items-center justify-center">
+                  <Ruler className="w-7 h-7 text-primary-foreground" />
+                </div>
+                <div className="flex-1 text-center sm:text-left">
+                  <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent mb-1">
+                    {sizesCopy.eyebrow}
+                  </span>
+                  <h2 className="font-display text-xl md:text-2xl text-foreground mb-1">{sizesCopy.title}</h2>
+                  <p className="text-muted-foreground text-sm">{sizesCopy.desc}</p>
+                </div>
+                <span className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-full group-hover:gap-3 transition-all whitespace-nowrap">
+                  {sizesCopy.cta}
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </Link>
+            </div>
+          </section>
+        )}
 
         {content.intro && (
           <ContentSection
