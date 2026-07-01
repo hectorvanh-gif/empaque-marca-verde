@@ -38,6 +38,18 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.bolsasmx.com/paper-bags/size-chart</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/bolsas-papel/tabla-de-tamanos"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bolsasmx.com/es/bolsas-papel/tabla-de-tamanos</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bolsasmx.com/paper-bags/size-chart"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.bolsasmx.com/paper-bags/white</loc>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.bolsasmx.com/es/bolsas-papel/blancas"/>
     <changefreq>weekly</changefreq>

@@ -11,12 +11,14 @@ import NotFound from "./pages/NotFound";
 
 import ProductCategoryPage from "@/components/marketing/ProductCategoryPage";
 import HubPage from "@/components/marketing/HubPage";
+import SpecsPage from "@/components/marketing/SpecsPage";
 import AboutPage from "@/components/marketing/AboutPage";
 import ContactPage from "@/components/marketing/ContactPage";
 
 // EN product content
 import { pillarEn } from "@/content/products/en/pillar";
 import { kraftEn } from "@/content/products/en/kraft";
+import { sizeChartEn } from "@/content/products/en/size-chart";
 import { whiteEn } from "@/content/products/en/white";
 import { foodEn } from "@/content/products/en/food";
 import { deliveryEn } from "@/content/products/en/delivery";
@@ -27,6 +29,7 @@ import { customEn } from "@/content/products/en/custom";
 // ES product content
 import { pillarEs } from "@/content/products/es/pillar";
 import { kraftEs } from "@/content/products/es/kraft";
+import { tablaTamanosEs } from "@/content/products/es/tabla-de-tamanos";
 import { blancasEs } from "@/content/products/es/blancas";
 import { comidaEs } from "@/content/products/es/comida";
 import { entregaEs } from "@/content/products/es/entrega";
@@ -77,6 +80,7 @@ const App = () => (
               <Route path="/paper-bags/retail" element={<ProductCategoryPage content={retailEn} />} />
               <Route path="/paper-bags/bread" element={<ProductCategoryPage content={breadEn} />} />
               <Route path="/paper-bags/custom" element={<ProductCategoryPage content={customEn} />} />
+              <Route path="/paper-bags/size-chart" element={<SpecsPage content={sizeChartEn} />} />
 
               {/* ── ES product pages ── */}
               <Route path="/es/bolsas-papel" element={<HubPage content={pillarEs} />} />
@@ -88,6 +92,7 @@ const App = () => (
               <Route path="/es/bolsas-papel/para-pan" element={<ProductCategoryPage content={paraPanEs} />} />
               <Route path="/es/bolsas-papel/estraza" element={<ProductCategoryPage content={estrazaEs} />} />
               <Route path="/es/bolsas-papel/personalizadas" element={<ProductCategoryPage content={personalizadasEs} />} />
+              <Route path="/es/bolsas-papel/tabla-de-tamanos" element={<SpecsPage content={tablaTamanosEs} />} />
 
               {/* ── Services (EN/ES) ── */}
               <Route path="/services" element={<HubPage content={servicesHubEn} />} />

@@ -1,4 +1,4 @@
-import { Package, Sparkles, UtensilsCrossed, Bike, Store, Croissant, Printer, FileText, Pencil, Truck } from "lucide-react";
+import { Package, Sparkles, UtensilsCrossed, Bike, Store, Croissant, Printer, Ruler, FileText, Pencil, Truck } from "lucide-react";
 import type { HubPageContent } from "@/components/marketing/HubPage";
 
 export const pillarEn: HubPageContent = {
@@ -26,6 +26,7 @@ export const pillarEn: HubPageContent = {
     { icon: Store, title: "Retail", description: "Branded bags for boutiques, fashion and department stores.", path: "/paper-bags/retail" },
     { icon: Croissant, title: "Bread", description: "Bakery bags sized to your bread line, with or without ventilation.", path: "/paper-bags/bread" },
     { icon: Printer, title: "Custom Printed", description: "Logo printing up to 2 colors, applied to any line in our catalog.", path: "/paper-bags/custom" },
+    { icon: Ruler, title: "Size Chart", description: "Standard sizes and paper weights for all our bag lines.", path: "/paper-bags/size-chart" },
   ],
   steps: {
     eyebrow: "How it works",

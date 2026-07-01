@@ -25,36 +25,6 @@ export const kraftEs: ProductCategoryContent = {
     image: catKraft,
     imageAlt: "Bolsas de papel kraft reciclado",
   },
-  specs: {
-    eyebrow: "Medidas estándar",
-    heading: "Tabla de tamaños",
-    description: "Todas las medidas en cm: Ancho × Alto × Fuelle. El gramaje base puede ajustarse según el peso del contenido.",
-    headers: { linea: "Línea", talla: "Talla", medidas: "Medidas (cm)", gramaje: "Gramaje base", uso: "Uso recomendado" },
-    standardTag: "Estándar",
-    lines: [
-      {
-        label: "Bolsas con Asa",
-        rows: [
-          { talla: "Chica", medidas: "14.5 × 21.5 × 7.5", gramaje: "70–80 g/m²", uso: "Joyería, cosméticos, accesorios pequeños" },
-          { talla: "Mediana", medidas: "19 × 26.5 × 8", gramaje: "80–90 g/m²", uso: "Ropa ligera, calzado chico, farmacia", std: true },
-          { talla: "Grande", medidas: "30 × 39 × 18", gramaje: "100–120 g/m²", uso: "Retail general, calzado adulto, ropa" },
-          { talla: "Jumbo", medidas: "33 × 47 × 12", gramaje: "110–130 g/m²", uso: "Boutique, artículos voluminosos, prendas" },
-        ],
-      },
-      { label: "Delivery", rows: [{ talla: "Única", medidas: "30 × 40 × 18", gramaje: "90–100 g/m²", uso: "Restaurantes, food delivery, alimentos preparados" }] },
-      {
-        label: "Boutique (sin asa)",
-        rows: [
-          { talla: "Chica", medidas: "20.5 × 14 × 9", gramaje: "60–70 g/m²", uso: "Joyería, perfumería, detalle" },
-          { talla: "Mediana", medidas: "30 × 22 × 12", gramaje: "80–90 g/m²", uso: "Moda, cosmética, vinos", std: true },
-          { talla: "Grande", medidas: "33 × 26 × 14.5", gramaje: "90–100 g/m²", uso: "Retail premium, ropa doblada" },
-        ],
-      },
-      { label: "Botella", rows: [{ talla: "Única", medidas: "12 × 35 × 9", gramaje: "100–120 g/m²", uso: "Vinos, licores, aceites gourmet — mín. 100g recomendado" }] },
-    ],
-    note:
-      "Gramajes disponibles: 60 a 160 g/m². Fabricamos a la medida dentro de los rangos: ancho 12–22 cm, alto 22.5–47 cm, fuelle 6–18 cm — el pedido mínimo varía según la medida y el gramaje, contáctanos para cotizar.",
-  },
   useCases: {
     eyebrow: "Quién compra kraft",
     heading: "Kraft al Mayoreo, Para Cada Tipo de Negocio",

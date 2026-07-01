@@ -25,36 +25,6 @@ export const kraftEn: ProductCategoryContent = {
     image: catKraft,
     imageAlt: "Recycled kraft paper bags",
   },
-  specs: {
-    eyebrow: "Standard sizes",
-    heading: "Size chart",
-    description: "All measurements in cm: Width × Height × Gusset. Base weight can be adjusted based on the content's weight.",
-    headers: { linea: "Line", talla: "Size", medidas: "Measurements (cm)", gramaje: "Base weight", uso: "Recommended use" },
-    standardTag: "Standard",
-    lines: [
-      {
-        label: "Handle Bags",
-        rows: [
-          { talla: "Small", medidas: "14.5 × 21.5 × 7.5", gramaje: "70–80 g/m²", uso: "Jewelry, cosmetics, small accessories" },
-          { talla: "Medium", medidas: "19 × 26.5 × 8", gramaje: "80–90 g/m²", uso: "Light clothing, small footwear, pharmacy", std: true },
-          { talla: "Large", medidas: "30 × 39 × 18", gramaje: "100–120 g/m²", uso: "General retail, footwear, clothing" },
-          { talla: "Jumbo", medidas: "33 × 47 × 12", gramaje: "110–130 g/m²", uso: "Boutique, bulky items, garments" },
-        ],
-      },
-      { label: "Delivery", rows: [{ talla: "One size", medidas: "30 × 40 × 18", gramaje: "90–100 g/m²", uso: "Restaurants, food delivery, prepared food" }] },
-      {
-        label: "Boutique (no handle)",
-        rows: [
-          { talla: "Small", medidas: "20.5 × 14 × 9", gramaje: "60–70 g/m²", uso: "Jewelry, perfumery, fine items" },
-          { talla: "Medium", medidas: "30 × 22 × 12", gramaje: "80–90 g/m²", uso: "Fashion, cosmetics, wine", std: true },
-          { talla: "Large", medidas: "33 × 26 × 14.5", gramaje: "90–100 g/m²", uso: "Premium retail, folded clothing" },
-        ],
-      },
-      { label: "Bottle", rows: [{ talla: "One size", medidas: "12 × 35 × 9", gramaje: "100–120 g/m²", uso: "Wine, liquor, gourmet oils — min. 100g recommended" }] },
-    ],
-    note:
-      "Available weights: 60 to 160 g/m². Custom sizes available within width 12–22 cm, height 22.5–47 cm, gusset 6–18 cm — minimum order varies by size and weight, contact us for a quote.",
-  },
   useCases: {
     eyebrow: "Who uses kraft",
     heading: "Built for Every Type of Retail",

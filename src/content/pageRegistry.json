@@ -53,6 +53,23 @@
       }
     },
     {
+      "id": "size-chart",
+      "category": "product",
+      "priority": "0.7",
+      "en": {
+        "slug": "/paper-bags/size-chart",
+        "h1": "Paper Bag Size Chart",
+        "title": "Paper Bag Size Chart | Measurements | BolsasMX",
+        "description": "Standard size chart for our paper bags: handle, delivery, boutique and bottle lines. Width × Height × Gusset in cm, weights 60-160 g/m². Custom sizes available."
+      },
+      "es": {
+        "slug": "/es/bolsas-papel/tabla-de-tamanos",
+        "h1": "Tabla de Tamaños de Bolsas de Papel",
+        "title": "Tabla de Tamaños de Bolsas de Papel | Medidas | BolsasMX",
+        "description": "Tabla de medidas estándar de bolsas de papel: líneas con asa, delivery, boutique y botella. Ancho × Alto × Fuelle en cm, gramajes 60-160 g/m². Medidas a la medida."
+      }
+    },
+    {
       "id": "white",
       "category": "product",
       "priority": "0.75",
